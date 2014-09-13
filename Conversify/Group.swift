@@ -8,7 +8,7 @@
 
 class Group {
     var groupID, groupName: String?
-    var userIDs, adminIDs: [String]?
+    var userIDs, adminIDs: Set?
     
     func addUser(userID: String) {
         userIDs?.append(userID)

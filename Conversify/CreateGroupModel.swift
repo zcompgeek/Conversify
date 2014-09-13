@@ -7,7 +7,7 @@
 //
 
 class CreateGroupModel: Model {
-    func sendCreateGroup() -> Bool {
+    func sendCreateGroup(Group) -> Bool {
         // TODO send request
         return false
     }
