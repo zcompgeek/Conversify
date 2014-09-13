@@ -13,6 +13,11 @@
 		B025B1DC19C40B3E00BD13A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B025B1DA19C40B3E00BD13A3 /* Main.storyboard */; };
 		B025B1DE19C40B3E00BD13A3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B025B1DD19C40B3E00BD13A3 /* Images.xcassets */; };
 		B025B1EA19C40B3F00BD13A3 /* ConversifyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B025B1E919C40B3F00BD13A3 /* ConversifyTests.swift */; };
+		B025B1F919C40BAA00BD13A3 /* GroupsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B025B1F419C40BAA00BD13A3 /* GroupsModel.swift */; };
+		B025B1FA19C40BAA00BD13A3 /* JDSideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = B025B1F619C40BAA00BD13A3 /* JDSideMenu.m */; };
+		B025B1FB19C40BAA00BD13A3 /* UIViewController+JDSideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = B025B1F819C40BAA00BD13A3 /* UIViewController+JDSideMenu.m */; };
+		B025B1FE19C40C6E00BD13A3 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = B025B1FD19C40C6E00BD13A3 /* Model.swift */; };
+		B025B20019C4116600BD13A3 /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = B025B1FF19C4116600BD13A3 /* Set.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +41,14 @@
 		B025B1E319C40B3F00BD13A3 /* ConversifyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConversifyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B025B1E819C40B3F00BD13A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B025B1E919C40B3F00BD13A3 /* ConversifyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversifyTests.swift; sourceTree = "<group>"; };
+		B025B1F419C40BAA00BD13A3 /* GroupsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupsModel.swift; sourceTree = "<group>"; };
+		B025B1F519C40BAA00BD13A3 /* JDSideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDSideMenu.h; sourceTree = "<group>"; };
+		B025B1F619C40BAA00BD13A3 /* JDSideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDSideMenu.m; sourceTree = "<group>"; };
+		B025B1F719C40BAA00BD13A3 /* UIViewController+JDSideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+JDSideMenu.h"; sourceTree = "<group>"; };
+		B025B1F819C40BAA00BD13A3 /* UIViewController+JDSideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+JDSideMenu.m"; sourceTree = "<group>"; };
+		B025B1FC19C40C3C00BD13A3 /* Conversify-Bridger-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Conversify-Bridger-Header.h"; sourceTree = "<group>"; };
+		B025B1FD19C40C6E00BD13A3 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		B025B1FF19C4116600BD13A3 /* Set.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Set.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +72,7 @@
 		B025B1C619C40B3E00BD13A3 = {
 			isa = PBXGroup;
 			children = (
+				B025B1F319C40BAA00BD13A3 /* Classes */,
 				B025B1D119C40B3E00BD13A3 /* Conversify */,
 				B025B1E619C40B3F00BD13A3 /* ConversifyTests */,
 				B025B1D019C40B3E00BD13A3 /* Products */,
@@ -110,6 +124,21 @@
 				B025B1E819C40B3F00BD13A3 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B025B1F319C40BAA00BD13A3 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				B025B1FF19C4116600BD13A3 /* Set.swift */,
+				B025B1F419C40BAA00BD13A3 /* GroupsModel.swift */,
+				B025B1F519C40BAA00BD13A3 /* JDSideMenu.h */,
+				B025B1F619C40BAA00BD13A3 /* JDSideMenu.m */,
+				B025B1F719C40BAA00BD13A3 /* UIViewController+JDSideMenu.h */,
+				B025B1F819C40BAA00BD13A3 /* UIViewController+JDSideMenu.m */,
+				B025B1FC19C40C3C00BD13A3 /* Conversify-Bridger-Header.h */,
+				B025B1FD19C40C6E00BD13A3 /* Model.swift */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,8 +240,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B025B20019C4116600BD13A3 /* Set.swift in Sources */,
+				B025B1FE19C40C6E00BD13A3 /* Model.swift in Sources */,
+				B025B1FB19C40BAA00BD13A3 /* UIViewController+JDSideMenu.m in Sources */,
 				B025B1D919C40B3E00BD13A3 /* DetailViewController.swift in Sources */,
+				B025B1F919C40BAA00BD13A3 /* GroupsModel.swift in Sources */,
 				B025B1D719C40B3E00BD13A3 /* MasterViewController.swift in Sources */,
+				B025B1FA19C40BAA00BD13A3 /* JDSideMenu.m in Sources */,
 				B025B1D519C40B3E00BD13A3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -332,6 +366,7 @@
 				INFOPLIST_FILE = Conversify/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/zcompgeek/Documents/iOS/Conversify/Classes/Conversify-Bridger-Header.h";
 			};
 			name = Debug;
 		};
@@ -343,6 +378,7 @@
 				INFOPLIST_FILE = Conversify/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/zcompgeek/Documents/iOS/Conversify/Classes/Conversify-Bridger-Header.h";
 			};
 			name = Release;
 		};

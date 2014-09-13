@@ -16,6 +16,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication!, didFinishLaunchingWithOptions launchOptions: NSDictionary!) -> Bool {
         // Override point for customization after application launch.
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        self.window?.makeKeyAndVisible()
+        
+        let menuController : UIViewController = MasterViewController()
+        let contentController = UIViewController()
+        contentController.view.backgroundColor = UIColor(hue: 0.5, saturation: 1.0, brightness: 1.0, alpha: 1.0)
+        contentController.title = "Hue: \(0.5)"
+        
+        let navController = UINavigationController(rootViewController: contentController)
+        let sideMenu : JDSideMenu = JDSideMenu(contentController: contentController, menuController: menuController)
+        sideMenu.setBackgroundImage(UIImage(named: "menuwallpaper"))
+        
+        if let window = self.window{
+            window.rootViewController = sideMenu
+        }
         return true
     }
 
