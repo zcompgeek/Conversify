@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3E00E8DD19C3F27D00DF96BE /* GroupsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E00E8DC19C3F27D00DF96BE /* GroupsModel.swift */; };
+		3E00E8E019C403AA00DF96BE /* CreateGroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E00E8DF19C403AA00DF96BE /* CreateGroupModel.swift */; };
+		3E00E8E219C404C600DF96BE /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E00E8E119C404C600DF96BE /* Group.swift */; };
 		B000752819C3EEE5000B6DA3 /* JDSideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = B000752519C3EEE5000B6DA3 /* JDSideMenu.m */; };
 		B000752919C3EEE5000B6DA3 /* UIViewController+JDSideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = B000752719C3EEE5000B6DA3 /* UIViewController+JDSideMenu.m */; };
 		B0048D5919C3C10400044648 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0048D5819C3C10400044648 /* AppDelegate.swift */; };
@@ -34,6 +36,8 @@
 
 /* Begin PBXFileReference section */
 		3E00E8DC19C3F27D00DF96BE /* GroupsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupsModel.swift; path = ../Classes/GroupsModel.swift; sourceTree = "<group>"; };
+		3E00E8DF19C403AA00DF96BE /* CreateGroupModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateGroupModel.swift; sourceTree = "<group>"; };
+		3E00E8E119C404C600DF96BE /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		82E79283DB274535AE09E1A7 /* libPods-Conversify.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Conversify.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B000752419C3EEE5000B6DA3 /* JDSideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDSideMenu.h; sourceTree = "<group>"; };
 		B000752519C3EEE5000B6DA3 /* JDSideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDSideMenu.m; sourceTree = "<group>"; };
@@ -75,6 +79,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E00E8DE19C4036900DF96BE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B0048D7719C3C14300044648 /* Model.swift */,
+				3E00E8DC19C3F27D00DF96BE /* GroupsModel.swift */,
+				3E00E8DF19C403AA00DF96BE /* CreateGroupModel.swift */,
+				3E00E8E119C404C600DF96BE /* Group.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		B000752319C3EEE5000B6DA3 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -109,11 +124,10 @@
 		B0048D5519C3C10400044648 /* Conversify */ = {
 			isa = PBXGroup;
 			children = (
-				3E00E8DC19C3F27D00DF96BE /* GroupsModel.swift */,
+				3E00E8DE19C4036900DF96BE /* Models */,
 				B0048D5819C3C10400044648 /* AppDelegate.swift */,
 				B0048D5A19C3C10400044648 /* MasterViewController.swift */,
 				B0048D5C19C3C10400044648 /* DetailViewController.swift */,
-				B0048D7719C3C14300044648 /* Model.swift */,
 				B0048D5E19C3C10400044648 /* Main.storyboard */,
 				B0048D6119C3C10400044648 /* Images.xcassets */,
 				B0048D5619C3C10400044648 /* Supporting Files */,
@@ -290,9 +304,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E00E8E219C404C600DF96BE /* Group.swift in Sources */,
 				B000752919C3EEE5000B6DA3 /* UIViewController+JDSideMenu.m in Sources */,
 				B0048D5D19C3C10400044648 /* DetailViewController.swift in Sources */,
 				B0048D5B19C3C10400044648 /* MasterViewController.swift in Sources */,
+				3E00E8E019C403AA00DF96BE /* CreateGroupModel.swift in Sources */,
 				B0048D5919C3C10400044648 /* AppDelegate.swift in Sources */,
 				3E00E8DD19C3F27D00DF96BE /* GroupsModel.swift in Sources */,
 				B000752819C3EEE5000B6DA3 /* JDSideMenu.m in Sources */,
