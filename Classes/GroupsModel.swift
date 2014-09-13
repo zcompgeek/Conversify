@@ -9,10 +9,9 @@
 class GroupsModel: Model {
     
     /// Returns a dictionary with all the groups that a user is part of
-    /// Returns an array of groups, <String, Any>
-    /// Key, Value: groupID, String | groupName, String | isAdmin, Boolean
-    func getUserGroups(userID: String) -> [Dictionary<String, Any>]? {
-        var groups: [Dictionary<String, Any>]?
+    /// Returns an array of Group
+    func getUserGroups(userID: String) -> [Group]? {
+        var groups: [Group]?
         // TODO request user's groups
         return groups
     }
