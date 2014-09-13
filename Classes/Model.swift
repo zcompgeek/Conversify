@@ -16,19 +16,31 @@ class Model: LiveWebsocketProtocol, PassiveWebsocketProtocol {
     var curGroups: [Group] = []
     var curMessages: [Message] = []
     var userAuthenticated = false
+    var passiveWebsocket, liveWebsocket : Websocket
+    
 
     // Note: Websocket needs a delegate to listen to requests, and my class structure
     // requires that delegate to have this model act as a delegate in return
-    var liveWebsocket = Websocket(url: NSURL.URLWithString("ws://localhost:8080"))
-    var passiveWebsocket = Websocket(url: NSURL.URLWithString("ws://localhost:8080"))
+    var liveWebsocketLink = "ws://conversify.herokuapp.com/broadcast"
+    var passiveWebsocketLink = "ws://conversify.herokuapp.com/updates"
     var liveWebsocketDelegate : LiveWebsocketDelegate?
     var passiveWebsocketDelegate : PassiveWebsocketDelegate?
     
+    //var liveWebsocket = Websocket(url: NSURL.URLWithString("ws://conversify.herokuapp.com/broadcast"))
+    
     init() {
-        loadPersistentData()
+        passiveWebsocket = Websocket(url: NSURL.URLWithString(passiveWebsocketLink))
+        liveWebsocket = Websocket(url: NSURL.URLWithString(liveWebsocketLink))
+        
+        passiveWebsocketDelegate = PassiveWebsocketDelegate(listener: self)
+        passiveWebsocket.delegate = passiveWebsocketDelegate
+        passiveWebsocket.connect()
+        
         liveWebsocketDelegate = LiveWebsocketDelegate(listener: self)
         liveWebsocket.delegate = liveWebsocketDelegate
         liveWebsocket.connect()
+        
+        loadPersistentData()
         // identify the user to fully populate curUser
     }
     
@@ -60,27 +72,52 @@ class Model: LiveWebsocketProtocol, PassiveWebsocketProtocol {
         userAuthenticated = attemptAuthenticateUser()
     }
     
-    // +++++++++++ Live Websocket +++++++++++
+    // +++++++++++ Tools ++++++++++++
     
-    func onLiveWebsocketReceiveData(data: NSData) {
-        println("App received data in live socket")
-        // Call VC delegate that there's new data
+    // From https://medium.com/swift-programming/4-json-in-swift-144bf5f88ce4
+    func JSONStringify(jsonObj: AnyObject) -> String {
+        var e: NSError?
+        let jsonData: NSData! = NSJSONSerialization.dataWithJSONObject(
+            jsonObj,
+            options: NSJSONWritingOptions(0),
+            error: &e)
+        if e != nil {
+            return ""
+        } else {
+            return NSString(data: jsonData, encoding: NSUTF8StringEncoding)
+        }
     }
+    
+    // +++++++++++ Live Websocket +++++++++++
     
     func onLiveWebsocketReceiveMessage(text: String) {
         println("App received message '\(text)' in live socket")
         // Call VC delegate that there's new data
     }
     
-    func sendLiveWebsocketMessage(text: String) {
-        liveWebsocket.writeString(text)
-    }
-    
-    func sendLiveWebsocketData(data: NSData) {
-        liveWebsocket.writeData(data)
+    func sendLiveWebsocketMessage(obj: AnyObject) {
+        liveWebsocket.writeString(JSONStringify(obj))
     }
     
     // +++++++++++ Passive Websocket +++++++++++
+    
+    func onPassiveWebsocketReceiveData(data: NSData) {
+        println("App received data in Passive socket")
+        // Call VC delegate that there's new data
+    }
+    
+    func onPassiveWebsocketReceiveMessage(text: String) {
+        println("App received message '\(text)' in Passive socket")
+        // Call VC delegate that there's new data
+    }
+    
+    func sendPassiveWebsocketMessage(text: String) {
+        passiveWebsocket.writeString(text)
+    }
+    
+    func sendPassiveWebsocketData(data: NSData) {
+        passiveWebsocket.writeData(data)
+    }
     
     // ----------- Groups -----------
     

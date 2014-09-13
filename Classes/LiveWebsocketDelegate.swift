@@ -10,7 +10,7 @@ import Foundation
 
 protocol LiveWebsocketProtocol {
     func onLiveWebsocketReceiveMessage(text: String)
-    func onLiveWebsocketReceiveData(data: NSData)
+    func sendLiveWebsocketMessage(obj: AnyObject)
     
 }
 
@@ -24,6 +24,7 @@ class LiveWebsocketDelegate : WebsocketDelegate {
     
     func websocketDidConnect() {
         println("Live Websocket is connected")
+        delegate?.sendLiveWebsocketMessage(["method":"getMessagesInConversation", "arguments":[1]])
     }
     
     func websocketDidDisconnect(error: NSError?) {
@@ -42,7 +43,6 @@ class LiveWebsocketDelegate : WebsocketDelegate {
     }
     func websocketDidReceiveData(data: NSData) {
         println("got some data: \(data.length)")
-        delegate?.onLiveWebsocketReceiveData(data)
         //self.socket.writeData(data) //example on how to write binary data to the socket
     }
     

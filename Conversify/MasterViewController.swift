@@ -11,6 +11,7 @@ import UIKit
 class MasterViewController: UITableViewController {
 
     var objects : [[String]] = []
+    var model = Model()
 
 
     override func awakeFromNib() {

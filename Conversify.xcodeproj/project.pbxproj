@@ -111,6 +111,8 @@
 				3E00E8F119C42CC700DF96BE /* ConversationsModel.swift */,
 				3E00E8ED19C418E500DF96BE /* GroupSettingsModel.swift */,
 				3E00E8FB19C4318F00DF96BE /* HomeModel.swift */,
+				3E00E90119C4819B00DF96BE /* PassiveWebsocketDelegate.swift */,
+				3E00E8FF19C4765400DF96BE /* LiveWebsocketDelegate.swift */,
 				3E00E8F319C42CD400DF96BE /* MessagesModel.swift */,
 				3E00E8F519C42E0D00DF96BE /* ComposeMessageModel.swift */,
 				3E00E8EC19C4183600DF96BE /* Custom Data Structures */,
@@ -125,8 +127,6 @@
 				B025B1FF19C4116600BD13A3 /* Set.swift */,
 				3E00E8EF19C41A4300DF96BE /* User.swift */,
 				3E00E8F919C430BA00DF96BE /* Websocket.swift */,
-				3E00E8FF19C4765400DF96BE /* LiveWebsocketDelegate.swift */,
-				3E00E90119C4819B00DF96BE /* PassiveWebsocketDelegate.swift */,
 				3E00E90319C496E200DF96BE /* Message.swift */,
 			);
 			name = "Custom Data Structures";
