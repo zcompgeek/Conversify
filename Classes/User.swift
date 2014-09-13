@@ -6,7 +6,13 @@
 //  Copyright (c) 2014 Zach Costa. All rights reserved.
 //
 
+import Foundation
+
 class User {
     var userID, userName, userEmail, userPhone: String?
-    var userGroups: [Group]?
+    var deviceID: NSUUID
+    
+    init() {
+        
+    }
 }
