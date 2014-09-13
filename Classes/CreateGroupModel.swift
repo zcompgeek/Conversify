@@ -6,9 +6,12 @@
 //  Copyright (c) 2014 Zach Costa. All rights reserved.
 //
 
-class CreateGroupModel: Model {
+/// Model intended for use with the Create Group Modal
+class CreateGroupModel {
+    
     func sendCreateGroup(Group) -> Bool {
         // TODO send request
         return false
     }
+    
 }
