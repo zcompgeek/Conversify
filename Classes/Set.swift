@@ -5,6 +5,7 @@
 //  Copyright (c) 2014 Zach Costa. All rights reserved.
 //
 
+/// Generic Set class
 class Set<T: Hashable>: Sequence, Printable {
     var dictionary = Dictionary<T, Bool>()  // private
     

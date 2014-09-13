@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Zach Costa. All rights reserved.
 //
 
+/// Parent model for Conversify. Holds some of the most generic model functions.
 class Model {
     
     var databasePath : String = ""

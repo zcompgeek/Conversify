@@ -6,15 +6,25 @@
 //  Copyright (c) 2014 Zach Costa. All rights reserved.
 //
 
+/// Instances of this class hold details of a group
 class Group {
     var groupID, groupName: String?
-    //var userIDs, adminIDs: Set?
+    var userIDs, adminIDs: Set<String>?
     
     func addUser(userID: String) {
-    //    userIDs?.append(userID)
+        userIDs?.addElement(userID)
     }
     
     func removeUser(userID: String) {
-        
+        userIDs?.removeElement(userID)
     }
+    
+    func addAdmin(adminID: String) {
+        adminIDs?.addElement(adminID)
+    }
+    
+    func removeAdmin(adminID: String) {
+        adminIDs?.removeElement(adminID)
+    }
+    
 }
