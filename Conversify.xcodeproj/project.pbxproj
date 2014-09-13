@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B000752819C3EEE5000B6DA3 /* JDSideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = B000752519C3EEE5000B6DA3 /* JDSideMenu.m */; };
+		B000752919C3EEE5000B6DA3 /* UIViewController+JDSideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = B000752719C3EEE5000B6DA3 /* UIViewController+JDSideMenu.m */; };
 		B0048D5919C3C10400044648 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0048D5819C3C10400044648 /* AppDelegate.swift */; };
 		B0048D5B19C3C10400044648 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0048D5A19C3C10400044648 /* MasterViewController.swift */; };
 		B0048D5D19C3C10400044648 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0048D5C19C3C10400044648 /* DetailViewController.swift */; };
@@ -30,8 +32,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		35E79CB7E7544C2D890B971D /* Pods-Conversify.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Conversify.xcconfig"; path = "Pods/Pods-Conversify.xcconfig"; sourceTree = "<group>"; };
 		82E79283DB274535AE09E1A7 /* libPods-Conversify.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Conversify.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B000752419C3EEE5000B6DA3 /* JDSideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDSideMenu.h; sourceTree = "<group>"; };
+		B000752519C3EEE5000B6DA3 /* JDSideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDSideMenu.m; sourceTree = "<group>"; };
+		B000752619C3EEE5000B6DA3 /* UIViewController+JDSideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+JDSideMenu.h"; sourceTree = "<group>"; };
+		B000752719C3EEE5000B6DA3 /* UIViewController+JDSideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+JDSideMenu.m"; sourceTree = "<group>"; };
 		B0048D5319C3C10400044648 /* Conversify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Conversify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0048D5719C3C10400044648 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0048D5819C3C10400044648 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -68,13 +73,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B000752319C3EEE5000B6DA3 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				B000752419C3EEE5000B6DA3 /* JDSideMenu.h */,
+				B000752519C3EEE5000B6DA3 /* JDSideMenu.m */,
+				B000752619C3EEE5000B6DA3 /* UIViewController+JDSideMenu.h */,
+				B000752719C3EEE5000B6DA3 /* UIViewController+JDSideMenu.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		B0048D4A19C3C10400044648 = {
 			isa = PBXGroup;
 			children = (
+				B000752319C3EEE5000B6DA3 /* Classes */,
 				B0048D5519C3C10400044648 /* Conversify */,
 				B0048D6A19C3C10400044648 /* ConversifyTests */,
 				B0048D5419C3C10400044648 /* Products */,
-				35E79CB7E7544C2D890B971D /* Pods-Conversify.xcconfig */,
 				B0B3810476AB4FF1A5503C72 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -271,9 +287,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B000752919C3EEE5000B6DA3 /* UIViewController+JDSideMenu.m in Sources */,
 				B0048D5D19C3C10400044648 /* DetailViewController.swift in Sources */,
 				B0048D5B19C3C10400044648 /* MasterViewController.swift in Sources */,
 				B0048D5919C3C10400044648 /* AppDelegate.swift in Sources */,
+				B000752819C3EEE5000B6DA3 /* JDSideMenu.m in Sources */,
 				B0048D7819C3C14300044648 /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -387,7 +405,6 @@
 		};
 		B0048D7219C3C10400044648 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 35E79CB7E7544C2D890B971D /* Pods-Conversify.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -399,7 +416,6 @@
 		};
 		B0048D7319C3C10400044648 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 35E79CB7E7544C2D890B971D /* Pods-Conversify.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
