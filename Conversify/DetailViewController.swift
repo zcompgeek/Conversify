@@ -8,10 +8,10 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController , UITableViewDelegate, UITableViewDataSource {
                             
-    @IBOutlet weak var detailDescriptionLabel: UILabel!
-
+    @IBOutlet weak var detailTableView: UITableView!
+    var tableArray : [String]!
 
     var detailItem: AnyObject? {
         didSet {
@@ -23,8 +23,7 @@ class DetailViewController: UIViewController {
     func configureView() {
         // Update the user interface for the detail item.
         if let detail: AnyObject = self.detailItem {
-            if let label = self.detailDescriptionLabel {
-                label.text = detail.description
+            if let label = self.detailTableView {
             }
         }
     }
@@ -33,6 +32,7 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.configureView()
+        tableArray = [String](count: 8, repeatedValue: "I'm a message")
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,6 +40,19 @@ class DetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    // MARK: - Table View
+    
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return tableArray.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
+        cell.textLabel.text = tableArray[indexPath.row]
+        return cell
+    }
+    
 
 }
 
