@@ -8,10 +8,11 @@
 
 import UIKit
 
+
 class MasterViewController: UITableViewController {
 
     var objects = NSMutableArray()
-
+    var model = Model()
 
     override func awakeFromNib() {
         super.awakeFromNib()

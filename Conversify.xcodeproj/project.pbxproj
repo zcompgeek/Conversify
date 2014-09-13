@@ -13,6 +13,7 @@
 		B0048D6019C3C10400044648 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0048D5E19C3C10400044648 /* Main.storyboard */; };
 		B0048D6219C3C10400044648 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0048D6119C3C10400044648 /* Images.xcassets */; };
 		B0048D6E19C3C10400044648 /* ConversifyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0048D6D19C3C10400044648 /* ConversifyTests.swift */; };
+		B0048D7819C3C14300044648 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0048D7719C3C14300044648 /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		B0048D6719C3C10400044648 /* ConversifyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConversifyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0048D6C19C3C10400044648 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0048D6D19C3C10400044648 /* ConversifyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversifyTests.swift; sourceTree = "<group>"; };
+		B0048D7719C3C14300044648 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				B0048D5819C3C10400044648 /* AppDelegate.swift */,
 				B0048D5A19C3C10400044648 /* MasterViewController.swift */,
 				B0048D5C19C3C10400044648 /* DetailViewController.swift */,
+				B0048D7719C3C14300044648 /* Model.swift */,
 				B0048D5E19C3C10400044648 /* Main.storyboard */,
 				B0048D6119C3C10400044648 /* Images.xcassets */,
 				B0048D5619C3C10400044648 /* Supporting Files */,
@@ -214,6 +217,7 @@
 				B0048D5D19C3C10400044648 /* DetailViewController.swift in Sources */,
 				B0048D5B19C3C10400044648 /* MasterViewController.swift in Sources */,
 				B0048D5919C3C10400044648 /* AppDelegate.swift in Sources */,
+				B0048D7819C3C14300044648 /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
