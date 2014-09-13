@@ -76,13 +76,21 @@
 		3E00E8E319C4134200DF96BE /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				B025B1FF19C4116600BD13A3 /* Set.swift */,
+				3E00E8EC19C4183600DF96BE /* Custom Data Structures */,
 				3E00E8E419C4137300DF96BE /* CreateGroupModel.swift */,
-				3E00E8E619C4138200DF96BE /* Group.swift */,
 				3E00E8E819C4139400DF96BE /* GroupsModel.swift */,
 				3E00E8EA19C413B800DF96BE /* Model.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		3E00E8EC19C4183600DF96BE /* Custom Data Structures */ = {
+			isa = PBXGroup;
+			children = (
+				3E00E8E619C4138200DF96BE /* Group.swift */,
+				B025B1FF19C4116600BD13A3 /* Set.swift */,
+			);
+			name = "Custom Data Structures";
 			sourceTree = "<group>";
 		};
 		B025B1C619C40B3E00BD13A3 = {
