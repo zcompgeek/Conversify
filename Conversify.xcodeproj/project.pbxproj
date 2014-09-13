@@ -1,0 +1,414 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B025B1D519C40B3E00BD13A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B025B1D419C40B3E00BD13A3 /* AppDelegate.swift */; };
+		B025B1D719C40B3E00BD13A3 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B025B1D619C40B3E00BD13A3 /* MasterViewController.swift */; };
+		B025B1D919C40B3E00BD13A3 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B025B1D819C40B3E00BD13A3 /* DetailViewController.swift */; };
+		B025B1DC19C40B3E00BD13A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B025B1DA19C40B3E00BD13A3 /* Main.storyboard */; };
+		B025B1DE19C40B3E00BD13A3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B025B1DD19C40B3E00BD13A3 /* Images.xcassets */; };
+		B025B1EA19C40B3F00BD13A3 /* ConversifyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B025B1E919C40B3F00BD13A3 /* ConversifyTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B025B1E419C40B3F00BD13A3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B025B1C719C40B3E00BD13A3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B025B1CE19C40B3E00BD13A3;
+			remoteInfo = Conversify;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B025B1CF19C40B3E00BD13A3 /* Conversify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Conversify.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B025B1D319C40B3E00BD13A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B025B1D419C40B3E00BD13A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B025B1D619C40B3E00BD13A3 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		B025B1D819C40B3E00BD13A3 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		B025B1DB19C40B3E00BD13A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B025B1DD19C40B3E00BD13A3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		B025B1E319C40B3F00BD13A3 /* ConversifyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConversifyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B025B1E819C40B3F00BD13A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B025B1E919C40B3F00BD13A3 /* ConversifyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversifyTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B025B1CC19C40B3E00BD13A3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B025B1E019C40B3F00BD13A3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B025B1C619C40B3E00BD13A3 = {
+			isa = PBXGroup;
+			children = (
+				B025B1D119C40B3E00BD13A3 /* Conversify */,
+				B025B1E619C40B3F00BD13A3 /* ConversifyTests */,
+				B025B1D019C40B3E00BD13A3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B025B1D019C40B3E00BD13A3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B025B1CF19C40B3E00BD13A3 /* Conversify.app */,
+				B025B1E319C40B3F00BD13A3 /* ConversifyTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B025B1D119C40B3E00BD13A3 /* Conversify */ = {
+			isa = PBXGroup;
+			children = (
+				B025B1D419C40B3E00BD13A3 /* AppDelegate.swift */,
+				B025B1D619C40B3E00BD13A3 /* MasterViewController.swift */,
+				B025B1D819C40B3E00BD13A3 /* DetailViewController.swift */,
+				B025B1DA19C40B3E00BD13A3 /* Main.storyboard */,
+				B025B1DD19C40B3E00BD13A3 /* Images.xcassets */,
+				B025B1D219C40B3E00BD13A3 /* Supporting Files */,
+			);
+			path = Conversify;
+			sourceTree = "<group>";
+		};
+		B025B1D219C40B3E00BD13A3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B025B1D319C40B3E00BD13A3 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B025B1E619C40B3F00BD13A3 /* ConversifyTests */ = {
+			isa = PBXGroup;
+			children = (
+				B025B1E919C40B3F00BD13A3 /* ConversifyTests.swift */,
+				B025B1E719C40B3F00BD13A3 /* Supporting Files */,
+			);
+			path = ConversifyTests;
+			sourceTree = "<group>";
+		};
+		B025B1E719C40B3F00BD13A3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B025B1E819C40B3F00BD13A3 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B025B1CE19C40B3E00BD13A3 /* Conversify */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B025B1ED19C40B3F00BD13A3 /* Build configuration list for PBXNativeTarget "Conversify" */;
+			buildPhases = (
+				B025B1CB19C40B3E00BD13A3 /* Sources */,
+				B025B1CC19C40B3E00BD13A3 /* Frameworks */,
+				B025B1CD19C40B3E00BD13A3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Conversify;
+			productName = Conversify;
+			productReference = B025B1CF19C40B3E00BD13A3 /* Conversify.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B025B1E219C40B3F00BD13A3 /* ConversifyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B025B1F019C40B3F00BD13A3 /* Build configuration list for PBXNativeTarget "ConversifyTests" */;
+			buildPhases = (
+				B025B1DF19C40B3F00BD13A3 /* Sources */,
+				B025B1E019C40B3F00BD13A3 /* Frameworks */,
+				B025B1E119C40B3F00BD13A3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B025B1E519C40B3F00BD13A3 /* PBXTargetDependency */,
+			);
+			name = ConversifyTests;
+			productName = ConversifyTests;
+			productReference = B025B1E319C40B3F00BD13A3 /* ConversifyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B025B1C719C40B3E00BD13A3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = "Zach Costa";
+				TargetAttributes = {
+					B025B1CE19C40B3E00BD13A3 = {
+						CreatedOnToolsVersion = 6.0;
+					};
+					B025B1E219C40B3F00BD13A3 = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = B025B1CE19C40B3E00BD13A3;
+					};
+				};
+			};
+			buildConfigurationList = B025B1CA19C40B3E00BD13A3 /* Build configuration list for PBXProject "Conversify" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B025B1C619C40B3E00BD13A3;
+			productRefGroup = B025B1D019C40B3E00BD13A3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B025B1CE19C40B3E00BD13A3 /* Conversify */,
+				B025B1E219C40B3F00BD13A3 /* ConversifyTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B025B1CD19C40B3E00BD13A3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B025B1DC19C40B3E00BD13A3 /* Main.storyboard in Resources */,
+				B025B1DE19C40B3E00BD13A3 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B025B1E119C40B3F00BD13A3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B025B1CB19C40B3E00BD13A3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B025B1D919C40B3E00BD13A3 /* DetailViewController.swift in Sources */,
+				B025B1D719C40B3E00BD13A3 /* MasterViewController.swift in Sources */,
+				B025B1D519C40B3E00BD13A3 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B025B1DF19C40B3F00BD13A3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B025B1EA19C40B3F00BD13A3 /* ConversifyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B025B1E519C40B3F00BD13A3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B025B1CE19C40B3E00BD13A3 /* Conversify */;
+			targetProxy = B025B1E419C40B3F00BD13A3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B025B1DA19C40B3E00BD13A3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B025B1DB19C40B3E00BD13A3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B025B1EB19C40B3F00BD13A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B025B1EC19C40B3F00BD13A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B025B1EE19C40B3F00BD13A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = Conversify/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B025B1EF19C40B3F00BD13A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = Conversify/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		B025B1F119C40B3F00BD13A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Conversify.app/Conversify";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ConversifyTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Debug;
+		};
+		B025B1F219C40B3F00BD13A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Conversify.app/Conversify";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ConversifyTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B025B1CA19C40B3E00BD13A3 /* Build configuration list for PBXProject "Conversify" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B025B1EB19C40B3F00BD13A3 /* Debug */,
+				B025B1EC19C40B3F00BD13A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B025B1ED19C40B3F00BD13A3 /* Build configuration list for PBXNativeTarget "Conversify" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B025B1EE19C40B3F00BD13A3 /* Debug */,
+				B025B1EF19C40B3F00BD13A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B025B1F019C40B3F00BD13A3 /* Build configuration list for PBXNativeTarget "ConversifyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B025B1F119C40B3F00BD13A3 /* Debug */,
+				B025B1F219C40B3F00BD13A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B025B1C719C40B3E00BD13A3 /* Project object */;
+}
