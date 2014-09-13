@@ -20,6 +20,10 @@
 		B025B1FA19C40BAA00BD13A3 /* JDSideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = B025B1F619C40BAA00BD13A3 /* JDSideMenu.m */; };
 		B025B1FB19C40BAA00BD13A3 /* UIViewController+JDSideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = B025B1F819C40BAA00BD13A3 /* UIViewController+JDSideMenu.m */; };
 		B025B20019C4116600BD13A3 /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = B025B1FF19C4116600BD13A3 /* Set.swift */; };
+		B025B20219C4224900BD13A3 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B025B20119C4224900BD13A3 /* SideMenuViewController.swift */; };
+		B025B20419C4248100BD13A3 /* SideMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B025B20319C4248100BD13A3 /* SideMenuViewController.xib */; };
+		B054578819C4CC47001BBD04 /* threadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B054578719C4CC47001BBD04 /* threadTableViewCell.swift */; };
+		B054578A19C4D87B001BBD04 /* threadTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B054578919C4D87B001BBD04 /* threadTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +57,10 @@
 		B025B1F819C40BAA00BD13A3 /* UIViewController+JDSideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+JDSideMenu.m"; sourceTree = "<group>"; };
 		B025B1FC19C40C3C00BD13A3 /* Conversify-Bridger-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Conversify-Bridger-Header.h"; sourceTree = "<group>"; };
 		B025B1FF19C4116600BD13A3 /* Set.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Set.swift; sourceTree = "<group>"; };
+		B025B20119C4224900BD13A3 /* SideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SideMenuViewController.swift; path = ../Classes/SideMenuViewController.swift; sourceTree = "<group>"; };
+		B025B20319C4248100BD13A3 /* SideMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideMenuViewController.xib; sourceTree = "<group>"; };
+		B054578719C4CC47001BBD04 /* threadTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = threadTableViewCell.swift; sourceTree = "<group>"; };
+		B054578919C4D87B001BBD04 /* threadTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = threadTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,10 +115,14 @@
 		B025B1D119C40B3E00BD13A3 /* Conversify */ = {
 			isa = PBXGroup;
 			children = (
+				B025B20119C4224900BD13A3 /* SideMenuViewController.swift */,
+				B025B20319C4248100BD13A3 /* SideMenuViewController.xib */,
 				B025B1D419C40B3E00BD13A3 /* AppDelegate.swift */,
 				B025B1D619C40B3E00BD13A3 /* MasterViewController.swift */,
 				B025B1D819C40B3E00BD13A3 /* DetailViewController.swift */,
 				B025B1DA19C40B3E00BD13A3 /* Main.storyboard */,
+				B054578919C4D87B001BBD04 /* threadTableViewCell.xib */,
+				B054578719C4CC47001BBD04 /* threadTableViewCell.swift */,
 				B025B1DD19C40B3E00BD13A3 /* Images.xcassets */,
 				B025B1D219C40B3E00BD13A3 /* Supporting Files */,
 			);
@@ -235,8 +247,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B025B20419C4248100BD13A3 /* SideMenuViewController.xib in Resources */,
 				B025B1DC19C40B3E00BD13A3 /* Main.storyboard in Resources */,
 				B025B1DE19C40B3E00BD13A3 /* Images.xcassets in Resources */,
+				B054578A19C4D87B001BBD04 /* threadTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,8 +272,10 @@
 				B025B1FB19C40BAA00BD13A3 /* UIViewController+JDSideMenu.m in Sources */,
 				B025B1D919C40B3E00BD13A3 /* DetailViewController.swift in Sources */,
 				3E00E8E719C4138200DF96BE /* Group.swift in Sources */,
+				B025B20219C4224900BD13A3 /* SideMenuViewController.swift in Sources */,
 				B025B1D719C40B3E00BD13A3 /* MasterViewController.swift in Sources */,
 				3E00E8EB19C413B800DF96BE /* Model.swift in Sources */,
+				B054578819C4CC47001BBD04 /* threadTableViewCell.swift in Sources */,
 				3E00E8E519C4137300DF96BE /* CreateGroupModel.swift in Sources */,
 				3E00E8E919C4139400DF96BE /* GroupsModel.swift in Sources */,
 				B025B1FA19C40BAA00BD13A3 /* JDSideMenu.m in Sources */,

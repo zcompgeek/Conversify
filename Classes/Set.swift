@@ -5,7 +5,7 @@
 //  Copyright (c) 2014 Zach Costa. All rights reserved.
 //
 
-class Set<T: Hashable>: Sequence, Printable {
+class Set<T: Hashable>: SequenceType, Printable {
     var dictionary = Dictionary<T, Bool>()  // private
     
     func addElement(newElement: T) {

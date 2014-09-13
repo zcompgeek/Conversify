@@ -8,12 +8,16 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
                             
-    @IBOutlet weak var detailDescriptionLabel: UILabel!
+    @IBOutlet weak var tableView: UITableView!
+    //@IBOutlet var addButton: UIButton!
+    @IBAction func addMessage(sender: AnyObject) {
+        
+    }
 
 
-    var detailItem: AnyObject? {
+    var detailItem: ([String])? {
         didSet {
             // Update the view.
             self.configureView()
@@ -22,17 +26,24 @@ class DetailViewController: UIViewController {
 
     func configureView() {
         // Update the user interface for the detail item.
-        if let detail: AnyObject = self.detailItem {
-            if let label = self.detailDescriptionLabel {
-                label.text = detail.description
-            }
-        }
+        
+        ///if let detail: [String] = self.detailItem {
+            
+        //}
+        
+        
+        
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.configureView()
+        var nib = UINib(nibName: "threadTableViewCell", bundle: nil)
+        tableView.registerNib(nib, forCellReuseIdentifier: "threadCell")
+        tableView.estimatedRowHeight = 68.0
+        tableView.rowHeight = UITableViewAutomaticDimension
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,6 +51,25 @@ class DetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if let cells = detailItem {
+            return cells.count
+        }
+        println("error in table")
+        return 0
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var cell:threadTableViewCell = self.tableView.dequeueReusableCellWithIdentifier("threadCell") as threadTableViewCell
+        
+        // this is how you extract values from a tuple
+        if let messageArray = detailItem {
+            var message = messageArray[indexPath.row]
+            cell.loadItem(message: message, sender: "Bob")
+        }
+        return cell
+    }
+    
 
 }
 

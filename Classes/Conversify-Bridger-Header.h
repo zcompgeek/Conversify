@@ -7,3 +7,4 @@
 //
 
 #import "JDSideMenu.h"
+#import "UIViewController+JDSideMenu.h"
