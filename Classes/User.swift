@@ -10,7 +10,7 @@ import Foundation
 
 class User {
     var userID, userName, userEmail, userPhone: String?
-    var deviceID: NSUUID
+    var deviceID: NSUUID?
     
     init() {
         

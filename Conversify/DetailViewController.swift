@@ -12,10 +12,17 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
                             
     @IBOutlet weak var tableView: UITableView!
     //@IBOutlet var addButton: UIButton!
-    @IBAction func addMessage(sender: AnyObject) {
-        
-    }
 
+    @IBAction func unwindToList(segue: UIStoryboardSegue) {
+        var source : NewMessageViewController = segue.sourceViewController as NewMessageViewController
+        if let message = source.messageToSend {
+            if let cells = detailItem {
+                //replace with send command
+                println("Sent \(message.text)")
+                tableView.reloadData()
+            }
+        }
+    }
 
     var detailItem: ([String])? {
         didSet {
