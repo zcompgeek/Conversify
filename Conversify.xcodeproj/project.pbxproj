@@ -11,6 +11,15 @@
 		3E00E8E719C4138200DF96BE /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E00E8E619C4138200DF96BE /* Group.swift */; };
 		3E00E8E919C4139400DF96BE /* GroupsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E00E8E819C4139400DF96BE /* GroupsModel.swift */; };
 		3E00E8EB19C413B800DF96BE /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E00E8EA19C413B800DF96BE /* Model.swift */; };
+		3E00E8EE19C418E500DF96BE /* GroupSettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E00E8ED19C418E500DF96BE /* GroupSettingsModel.swift */; };
+		3E00E8F019C41A4300DF96BE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E00E8EF19C41A4300DF96BE /* User.swift */; };
+		3E00E8F219C42CC700DF96BE /* ConversationsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E00E8F119C42CC700DF96BE /* ConversationsModel.swift */; };
+		3E00E8F419C42CD400DF96BE /* MessagesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E00E8F319C42CD400DF96BE /* MessagesModel.swift */; };
+		3E00E8F619C42E0D00DF96BE /* ComposeMessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E00E8F519C42E0D00DF96BE /* ComposeMessageModel.swift */; };
+		3E00E8FA19C430BA00DF96BE /* Websocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E00E8F919C430BA00DF96BE /* Websocket.swift */; };
+		3E00E8FC19C4318F00DF96BE /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E00E8FB19C4318F00DF96BE /* HomeModel.swift */; };
+		3E00E90019C4765400DF96BE /* LiveWebsocketDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E00E8FF19C4765400DF96BE /* LiveWebsocketDelegate.swift */; };
+		3E00E90219C4819B00DF96BE /* PassiveWebsocketDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E00E90119C4819B00DF96BE /* PassiveWebsocketDelegate.swift */; };
 		B025B1D519C40B3E00BD13A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B025B1D419C40B3E00BD13A3 /* AppDelegate.swift */; };
 		B025B1D719C40B3E00BD13A3 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B025B1D619C40B3E00BD13A3 /* MasterViewController.swift */; };
 		B025B1D919C40B3E00BD13A3 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B025B1D819C40B3E00BD13A3 /* DetailViewController.swift */; };
@@ -37,6 +46,15 @@
 		3E00E8E619C4138200DF96BE /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		3E00E8E819C4139400DF96BE /* GroupsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupsModel.swift; sourceTree = "<group>"; };
 		3E00E8EA19C413B800DF96BE /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		3E00E8ED19C418E500DF96BE /* GroupSettingsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupSettingsModel.swift; sourceTree = "<group>"; };
+		3E00E8EF19C41A4300DF96BE /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		3E00E8F119C42CC700DF96BE /* ConversationsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationsModel.swift; sourceTree = "<group>"; };
+		3E00E8F319C42CD400DF96BE /* MessagesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesModel.swift; sourceTree = "<group>"; };
+		3E00E8F519C42E0D00DF96BE /* ComposeMessageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeMessageModel.swift; sourceTree = "<group>"; };
+		3E00E8F919C430BA00DF96BE /* Websocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Websocket.swift; sourceTree = "<group>"; };
+		3E00E8FB19C4318F00DF96BE /* HomeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
+		3E00E8FF19C4765400DF96BE /* LiveWebsocketDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveWebsocketDelegate.swift; sourceTree = "<group>"; };
+		3E00E90119C4819B00DF96BE /* PassiveWebsocketDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassiveWebsocketDelegate.swift; sourceTree = "<group>"; };
 		B025B1CF19C40B3E00BD13A3 /* Conversify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Conversify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B025B1D319C40B3E00BD13A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B025B1D419C40B3E00BD13A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -76,10 +94,15 @@
 		3E00E8E319C4134200DF96BE /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				3E00E8EC19C4183600DF96BE /* Custom Data Structures */,
-				3E00E8E419C4137300DF96BE /* CreateGroupModel.swift */,
-				3E00E8E819C4139400DF96BE /* GroupsModel.swift */,
 				3E00E8EA19C413B800DF96BE /* Model.swift */,
+				3E00E8E819C4139400DF96BE /* GroupsModel.swift */,
+				3E00E8E419C4137300DF96BE /* CreateGroupModel.swift */,
+				3E00E8F119C42CC700DF96BE /* ConversationsModel.swift */,
+				3E00E8ED19C418E500DF96BE /* GroupSettingsModel.swift */,
+				3E00E8FB19C4318F00DF96BE /* HomeModel.swift */,
+				3E00E8F319C42CD400DF96BE /* MessagesModel.swift */,
+				3E00E8F519C42E0D00DF96BE /* ComposeMessageModel.swift */,
+				3E00E8EC19C4183600DF96BE /* Custom Data Structures */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -89,6 +112,10 @@
 			children = (
 				3E00E8E619C4138200DF96BE /* Group.swift */,
 				B025B1FF19C4116600BD13A3 /* Set.swift */,
+				3E00E8EF19C41A4300DF96BE /* User.swift */,
+				3E00E8F919C430BA00DF96BE /* Websocket.swift */,
+				3E00E8FF19C4765400DF96BE /* LiveWebsocketDelegate.swift */,
+				3E00E90119C4819B00DF96BE /* PassiveWebsocketDelegate.swift */,
 			);
 			name = "Custom Data Structures";
 			sourceTree = "<group>";
@@ -262,14 +289,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E00E8F219C42CC700DF96BE /* ConversationsModel.swift in Sources */,
+				3E00E8FA19C430BA00DF96BE /* Websocket.swift in Sources */,
+				3E00E8F619C42E0D00DF96BE /* ComposeMessageModel.swift in Sources */,
 				B025B20019C4116600BD13A3 /* Set.swift in Sources */,
 				B025B1FB19C40BAA00BD13A3 /* UIViewController+JDSideMenu.m in Sources */,
+				3E00E8EE19C418E500DF96BE /* GroupSettingsModel.swift in Sources */,
 				B025B1D919C40B3E00BD13A3 /* DetailViewController.swift in Sources */,
+				3E00E8F419C42CD400DF96BE /* MessagesModel.swift in Sources */,
+				3E00E90019C4765400DF96BE /* LiveWebsocketDelegate.swift in Sources */,
 				3E00E8E719C4138200DF96BE /* Group.swift in Sources */,
+				3E00E8FC19C4318F00DF96BE /* HomeModel.swift in Sources */,
 				B025B1D719C40B3E00BD13A3 /* MasterViewController.swift in Sources */,
 				3E00E8EB19C413B800DF96BE /* Model.swift in Sources */,
 				3E00E8E519C4137300DF96BE /* CreateGroupModel.swift in Sources */,
+				3E00E8F019C41A4300DF96BE /* User.swift in Sources */,
 				3E00E8E919C4139400DF96BE /* GroupsModel.swift in Sources */,
+				3E00E90219C4819B00DF96BE /* PassiveWebsocketDelegate.swift in Sources */,
 				B025B1FA19C40BAA00BD13A3 /* JDSideMenu.m in Sources */,
 				B025B1D519C40B3E00BD13A3 /* AppDelegate.swift in Sources */,
 			);

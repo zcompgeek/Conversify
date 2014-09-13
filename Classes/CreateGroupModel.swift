@@ -7,7 +7,7 @@
 //
 
 /// Model intended for use with the Create Group Modal
-class CreateGroupModel: Model {
+class CreateGroupModel {
     
     func sendCreateGroup(Group) -> Bool {
         // TODO send request

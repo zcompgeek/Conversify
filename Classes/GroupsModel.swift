@@ -7,15 +7,12 @@
 //
 
 /// Model intended for use with the Groups view
-class GroupsModel: Model {
+class GroupsModel {
     
-    /// Returns a dictionary with all the groups that a user is part of
-    /// Returns an array of Group
-    func getUserGroups(userID: String) -> [Group]? {
-        var groups: [Group]?
-        // TODO request user's groups
-        // TODO take request results and add them to Group objects
-        return groups
+    /// Updates groups with all groups that a user is part of
+    func getUserGroups(userID: String, groups: [Group]) -> Bool {
+        // TODO request user's groups and put them in groups
+        return false
     }
     
     /// Returns if user was successfully removed from the group
