@@ -382,7 +382,7 @@
 				INFOPLIST_FILE = Conversify/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/zcompgeek/Documents/iOS/Conversify/Classes/Conversify-Bridger-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Classes/Conversify-Bridger-Header.h";
 			};
 			name = Debug;
 		};
@@ -394,7 +394,7 @@
 				INFOPLIST_FILE = Conversify/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/zcompgeek/Documents/iOS/Conversify/Classes/Conversify-Bridger-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Classes/Conversify-Bridger-Header.h";
 			};
 			name = Release;
 		};
