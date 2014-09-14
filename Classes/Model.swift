@@ -14,6 +14,7 @@ class Model: LiveWebsocketProtocol, PassiveWebsocketProtocol {
     
     var curUser = User()
     var curGroups: [Group] = []
+    var curConverserations: [Conversation] = []
     var curMessages: [Message] = []
     var userAuthenticated = false
     var passiveWebsocket, liveWebsocket : Websocket
@@ -26,8 +27,6 @@ class Model: LiveWebsocketProtocol, PassiveWebsocketProtocol {
     var liveWebsocketDelegate: LiveWebsocketDelegate?
     var passiveWebsocketDelegate: PassiveWebsocketDelegate?
     var liveWebsocketState = 0, passiveWebsocketState = 0
-    
-    //var liveWebsocket = Websocket(url: NSURL.URLWithString("ws://conversify.herokuapp.com/broadcast"))
     
     init() {
         passiveWebsocket = Websocket(url: NSURL.URLWithString(passiveWebsocketLink))
@@ -42,10 +41,14 @@ class Model: LiveWebsocketProtocol, PassiveWebsocketProtocol {
         liveWebsocket.connect()
         
         loadPersistentData()
-        // identify the user to fully populate curUser
+        userAuthenticated = attemptAuthenticateUser()
+        if !userAuthenticated {
+            // TODO show user registration modal
+        }
+        while !userAuthenticated {
+            userAuthenticated = attemptAuthenticateUser()
+        }
     }
-    
-    /// Loads data that was stored between sessions
     
     // +++++++++++ Initial Stuff +++++++++++
     
@@ -53,16 +56,18 @@ class Model: LiveWebsocketProtocol, PassiveWebsocketProtocol {
         if curUser.userID == nil {
             return false
         }
-        // TODO Ask server if this deviceID, userID pair is present instead of assuming
-        // userID presence is true. If it's present, update phone, email, name
+        // TODO Ask server to authenticate user based on curUser.userID, curUser.deviceID
         return true
         
     }
     
     func pullAllData() {
-        // TODO pull groups and messages based on userID
+        // TODO pull all groups
+        // TODO pull all convos
+        // TODO pull all messages
     }
     
+    /// Loads data that was stored between sessions
     func loadPersistentData() {
         curUser.deviceID = UIDevice.currentDevice().identifierForVendor
         var storedVars = NSUserDefaults()
@@ -73,22 +78,6 @@ class Model: LiveWebsocketProtocol, PassiveWebsocketProtocol {
         userAuthenticated = attemptAuthenticateUser()
     }
     
-    // +++++++++++ Tools ++++++++++++
-    
-    // From https://medium.com/swift-programming/4-json-in-swift-144bf5f88ce4
-    func JSONStringify(jsonObj: AnyObject) -> String {
-        var e: NSError?
-        let jsonData: NSData! = NSJSONSerialization.dataWithJSONObject(
-            jsonObj,
-            options: NSJSONWritingOptions(0),
-            error: &e)
-        if e != nil {
-            return ""
-        } else {
-            return NSString(data: jsonData, encoding: NSUTF8StringEncoding)
-        }
-    }
-    
     // +++++++++++ Live Websocket +++++++++++
     
     func onLiveWebsocketReceiveMessage(text: String) {
@@ -97,25 +86,32 @@ class Model: LiveWebsocketProtocol, PassiveWebsocketProtocol {
     }
     
     func sendLiveWebsocketMessage(obj: AnyObject) {
-        var str = JSONStringify(obj)
-        liveWebsocket.writeString(str)
+        liveWebsocket.writeString(JSON(obj).toString())
     }
     
     func setLiveWebsocketState(state: Int) {
         liveWebsocketState = state
     }
     
+    func warnWebsocketWriteFail(error: NSError?) {
+        println("WRITE FAILED. Error: \(error)")
+    }
+    
     // +++++++++++ Passive Websocket +++++++++++
     
     func onPassiveWebsocketReceiveMessage(text: String) {
         println("App received message '\(text)' in passive socket")
-        // Call VC delegate that there's new data
+        var obj = JSON.parse(text)["object"]
+        var method = obj["method"].asString
+        if method == "updateUser" {
+            if ((obj["results"].asString == "failure") || obj["results"].isNull) {
+                println("Failed updating user. \(obj)")
+            }
+        }
     }
     
     func sendPassiveWebsocketMessage(obj: AnyObject) {
-        //var str = JSONStringify(obj)
-        //println(str)
-        passiveWebsocket.writeString(JSONStringify(obj))
+        passiveWebsocket.writeString(JSON(obj).toString())
     }
     
     func setPassiveWebsocketState(state: Int) {
@@ -146,14 +142,22 @@ class Model: LiveWebsocketProtocol, PassiveWebsocketProtocol {
     }
     
     // ----------- User Settings (Modal) -----------
-    // WARNING: if userAuthenticated is false, this needs to be updated before we do anything.
+    // Note that init places us in an infinite loop on the func that calls this submit until we successfully authenticate w/ db
     
-    func submitUserSettings(userID: String, userName: String, userEmail: String, userPhone: String) {
+    func submitRegistration(userID: String, userName: String, userEmail: String, userPhone: String) {
         curUser.userID = userID
         curUser.userName = userName
         curUser.userEmail = userEmail
         curUser.userPhone = userPhone
-        userAuthenticated = attemptAuthenticateUser()
+        var curTime: NSDate = NSDate.date()
+        var request = [
+            "method":"updateUser",
+            "arguments": [
+                userID, userName, userEmail, userPhone,
+                curUser.deviceID!, curTime
+            ]
+        ]
+        sendPassiveWebsocketMessage(request)
     }
     
     // ----------- CreateGroup (Modal) -----------

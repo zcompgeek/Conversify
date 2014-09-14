@@ -12,6 +12,7 @@ protocol LiveWebsocketProtocol {
     func onLiveWebsocketReceiveMessage(text: String)
     func sendLiveWebsocketMessage(obj: AnyObject)
     func setLiveWebsocketState(state: Int)
+    func warnWebsocketWriteFail(error: NSError?)
     
 }
 
@@ -36,7 +37,10 @@ class LiveWebsocketDelegate : WebsocketDelegate {
     }
     
     func websocketDidWriteError(error: NSError?) {
-        println("Live Websocket Error: \(error!.localizedDescription)")
+        if error != nil {
+            println("Live Websocket Error: \(error!.localizedDescription)")
+        }
+        delegate?.warnWebsocketWriteFail(error)
     }
     
     func websocketDidReceiveMessage(text: String) {

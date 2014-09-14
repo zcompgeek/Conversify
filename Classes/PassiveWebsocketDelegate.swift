@@ -12,6 +12,7 @@ protocol PassiveWebsocketProtocol {
     func onPassiveWebsocketReceiveMessage(text: String)
     func sendPassiveWebsocketMessage(obj: AnyObject)
     func setPassiveWebsocketState(state: Int)
+    func warnWebsocketWriteFail(error: NSError?)
     
 }
 
@@ -36,7 +37,10 @@ class PassiveWebsocketDelegate : WebsocketDelegate {
     }
     
     func websocketDidWriteError(error: NSError?) {
-        println("Passive Websocket Error: \(error!.localizedDescription)")
+        if error != nil {
+            println("Passive Websocket Error: \(error!.localizedDescription)")
+        }
+        delegate?.warnWebsocketWriteFail(error)
     }
     
     func websocketDidReceiveMessage(text: String) {
@@ -45,6 +49,7 @@ class PassiveWebsocketDelegate : WebsocketDelegate {
         delegate?.onPassiveWebsocketReceiveMessage(text)
         //self.socket.writeString(text) //example on how to write a string the socket
     }
+    
     func websocketDidReceiveData(data: NSData) {
         println("got some data: \(data.length)")
         //self.socket.writeData(data) //example on how to write binary data to the socket
