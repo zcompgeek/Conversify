@@ -13,9 +13,14 @@ class MenuViewController : UIViewController, UITableViewDataSource, UITableViewD
     var groups : ([Group])!
     var segNum : Int!
     var grpNum : Int!
+    let model : Model = (UIApplication.sharedApplication().delegate as AppDelegate).model!
     
     override func viewDidLoad() {
-        groups = [Group(name: "PGC"),Group(name: "Penn Dance"),Group(name: "SigEp")]
+        var groupList: [Group] = []
+        for (groupID, groupObj) in model.curGroups {
+            groupList.append(groupObj!)
+        }
+        groups = groupList
         tableView.selectRowAtIndexPath(NSIndexPath(forRow: grpNum, inSection: 0), animated: false, scrollPosition: UITableViewScrollPosition.None)
         segControl.selectedSegmentIndex = segNum
     }

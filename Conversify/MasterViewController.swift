@@ -82,6 +82,8 @@ class MasterViewController: UITableViewController {
             currentGroup = grp
             println("On Group \(grp)")
         }
+        threads = 
+        // set threads
         tableView.reloadData()
     }
 
