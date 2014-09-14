@@ -18,13 +18,13 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         if let message = source.messageToSend {
             if let cells = detailItem {
                 //replace with send command
-                println("Sent \(message.text)")
+                cells.messages.append(message)
                 tableView.reloadData()
             }
         }
     }
 
-    var detailItem: ([String])? {
+    var detailItem: Conversation? {
         didSet {
             // Update the view.
             self.configureView()
@@ -60,7 +60,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let cells = detailItem {
-            return cells.count
+            return cells.messages.count
         }
         println("error in table")
         return 0
@@ -70,8 +70,8 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         var cell:threadTableViewCell = self.tableView.dequeueReusableCellWithIdentifier("threadCell") as threadTableViewCell
         
         // this is how you extract values from a tuple
-        if let messageArray = detailItem {
-            var message = messageArray[indexPath.row]
+        if let convo = detailItem {
+            var message = convo.messages[indexPath.row].text
             cell.loadItem(message: message, sender: "Bob")
         }
         return cell

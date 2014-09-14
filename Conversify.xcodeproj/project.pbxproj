@@ -28,6 +28,8 @@
 		B054578819C4CC47001BBD04 /* threadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B054578719C4CC47001BBD04 /* threadTableViewCell.swift */; };
 		B054578A19C4D87B001BBD04 /* threadTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B054578919C4D87B001BBD04 /* threadTableViewCell.xib */; };
 		B054578C19C507AB001BBD04 /* NewMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B054578B19C507AB001BBD04 /* NewMessageViewController.swift */; };
+		B054578E19C51772001BBD04 /* NewThreadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B054578D19C51772001BBD04 /* NewThreadViewController.swift */; };
+		B054579019C519F7001BBD04 /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B054578F19C519F7001BBD04 /* Conversation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		B054578719C4CC47001BBD04 /* threadTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = threadTableViewCell.swift; sourceTree = "<group>"; };
 		B054578919C4D87B001BBD04 /* threadTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = threadTableViewCell.xib; sourceTree = "<group>"; };
 		B054578B19C507AB001BBD04 /* NewMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMessageViewController.swift; sourceTree = "<group>"; };
+		B054578D19C51772001BBD04 /* NewThreadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewThreadViewController.swift; sourceTree = "<group>"; };
+		B054578F19C519F7001BBD04 /* Conversation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,7 @@
 				3E00E8E619C4138200DF96BE /* Group.swift */,
 				B025B1FF19C4116600BD13A3 /* Set.swift */,
 				3E00E8EF19C41A4300DF96BE /* User.swift */,
+				B054578F19C519F7001BBD04 /* Conversation.swift */,
 				3E00E8F919C430BA00DF96BE /* Websocket.swift */,
 				3E00E90319C496E200DF96BE /* Message.swift */,
 			);
@@ -116,7 +121,6 @@
 			isa = PBXGroup;
 			children = (
 				B025B1F319C40BAA00BD13A3 /* Classes */,
-				B025B1D119C40B3E00BD13A3 /* Conversify */,
 				B025B1E619C40B3F00BD13A3 /* ConversifyTests */,
 				B025B1D019C40B3E00BD13A3 /* Products */,
 			);
@@ -140,13 +144,15 @@
 				B025B1D619C40B3E00BD13A3 /* MasterViewController.swift */,
 				B025B1D819C40B3E00BD13A3 /* DetailViewController.swift */,
 				B025B1DA19C40B3E00BD13A3 /* Main.storyboard */,
+				B054578D19C51772001BBD04 /* NewThreadViewController.swift */,
 				B054578B19C507AB001BBD04 /* NewMessageViewController.swift */,
 				B054578919C4D87B001BBD04 /* threadTableViewCell.xib */,
 				B054578719C4CC47001BBD04 /* threadTableViewCell.swift */,
 				B025B1DD19C40B3E00BD13A3 /* Images.xcassets */,
 				B025B1D219C40B3E00BD13A3 /* Supporting Files */,
 			);
-			path = Conversify;
+			name = Conversify;
+			path = ../Conversify;
 			sourceTree = "<group>";
 		};
 		B025B1D219C40B3E00BD13A3 /* Supporting Files */ = {
@@ -177,6 +183,7 @@
 		B025B1F319C40BAA00BD13A3 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				B025B1D119C40B3E00BD13A3 /* Conversify */,
 				3E00E8E319C4134200DF96BE /* Models */,
 				B025B1F519C40BAA00BD13A3 /* JDSideMenu.h */,
 				B025B1F619C40BAA00BD13A3 /* JDSideMenu.m */,
@@ -288,6 +295,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B054578E19C51772001BBD04 /* NewThreadViewController.swift in Sources */,
 				3E00E8FA19C430BA00DF96BE /* Websocket.swift in Sources */,
 				B025B20019C4116600BD13A3 /* Set.swift in Sources */,
 				B025B1FB19C40BAA00BD13A3 /* UIViewController+JDSideMenu.m in Sources */,
@@ -299,6 +307,7 @@
 				B025B1D719C40B3E00BD13A3 /* MasterViewController.swift in Sources */,
 				3E00E8EB19C413B800DF96BE /* Model.swift in Sources */,
 				B054578819C4CC47001BBD04 /* threadTableViewCell.swift in Sources */,
+				B054579019C519F7001BBD04 /* Conversation.swift in Sources */,
 				3E00E8F019C41A4300DF96BE /* User.swift in Sources */,
 				3E00E90219C4819B00DF96BE /* PassiveWebsocketDelegate.swift in Sources */,
 				3E00E90419C496E200DF96BE /* Message.swift in Sources */,
