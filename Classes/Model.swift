@@ -13,12 +13,13 @@ import UIKit
 class Model: LiveWebsocketProtocol, PassiveWebsocketProtocol {
     
     var curUser = User()
-    var curGroups: [String:Group] = Dictionary<String,Group>()
+    var curGroups: [String:Group?] = Dictionary<String,Group?>()
     var curConverserations: [String:Conversation] = Dictionary<String,Conversation>()
     var curMessages: [String:Message] = Dictionary<String,Message>()
     var userAuthenticated = false
     var messagesLoaded = false
     var passiveWebsocket, liveWebsocket : Websocket
+    var waitingOnPull = 0
     
 
     // Note: Websocket needs a delegate to listen to requests, and my class structure
@@ -60,6 +61,10 @@ class Model: LiveWebsocketProtocol, PassiveWebsocketProtocol {
     }
     
     func pullAllData() {
+        getGroupsForUser(curUser.userID!)
+        while waitingOnPull != 0 {
+            sleep(1)
+        }
         // TODO pull all groups
         // TODO pull all convos
         // TODO pull all messages
@@ -119,6 +124,15 @@ class Model: LiveWebsocketProtocol, PassiveWebsocketProtocol {
             curUser.userID = obj["results"][1].asString
             var storedVars = NSUserDefaults.standardUserDefaults()
             storedVars.setObject(curUser.userID, forKey: "userID")
+        } else if method == "getGroupsForUser" {
+            curGroups = Dictionary<String,Group?>()
+            for i in 1..<obj["results"].length {
+                println(i)
+                println(obj["results"][i].asString!)
+                curGroups[(obj["results"][i].asString)!] = Group(name: (obj["results"][i].asString)!)
+            }
+            println(curGroups)
+            waitingOnPull = 0
         } else if method == "getConversationsForGroup" {
             
         }
@@ -138,23 +152,6 @@ class Model: LiveWebsocketProtocol, PassiveWebsocketProtocol {
     
     func leftGroup(groupID: String) {
         
-    }
-    
-    func pullGroupData(groupID: String?) -> Group? {
-        if groupID == nil {
-            return nil
-        }
-        // TODO pull groupID's data
-        return nil
-    }
-    
-    func pullGroupsData() -> [Group]? {
-        var result = [Group]?()
-        var groupIDs = [String]() // TODO request user's groupID list
-        for groupID in groupIDs {
-           // result.append(pullGroupData(groupID))
-        }
-        return result
     }
     
     func getGroupsForUser(userID : String) {
