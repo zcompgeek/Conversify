@@ -326,6 +326,7 @@
 				B025B20219C4224900BD13A3 /* SideMenuViewController.swift in Sources */,
 				B025B1D719C40B3E00BD13A3 /* MasterViewController.swift in Sources */,
 				3E00E8EB19C413B800DF96BE /* Model.swift in Sources */,
+				3EEB239519C55688004CE4B3 /* json.swift in Sources */,
 				B054578819C4CC47001BBD04 /* threadTableViewCell.swift in Sources */,
 				B054579019C519F7001BBD04 /* Conversation.swift in Sources */,
 				3E00E8F019C41A4300DF96BE /* User.swift in Sources */,

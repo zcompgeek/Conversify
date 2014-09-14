@@ -46,6 +46,7 @@ class Model: LiveWebsocketProtocol, PassiveWebsocketProtocol {
     // +++++++++++ Initial Stuff +++++++++++
     
     func attemptAuthenticateUser() -> Bool {
+        println("authenticating")
         if curUser.userID == nil {
             return false
         }
@@ -110,6 +111,7 @@ class Model: LiveWebsocketProtocol, PassiveWebsocketProtocol {
     }
     
     func sendPassiveWebsocketMessage(obj: AnyObject) {
+        println("\(JSON(obj).toString())")
         passiveWebsocket.writeString(JSON(obj).toString())
     }
     
@@ -170,6 +172,7 @@ class Model: LiveWebsocketProtocol, PassiveWebsocketProtocol {
         var counter = 0
         while userAuthenticated != 1 && counter < 5 {
             sleep(1)
+            counter++
         }
         return userAuthenticated
     }
