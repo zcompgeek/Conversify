@@ -12,10 +12,12 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
                             
     var window: UIWindow?
+    var model: Model?
 
 
     func application(application: UIApplication!, didFinishLaunchingWithOptions launchOptions: NSDictionary!) -> Bool {
         // Override point for customization after application launch.
+        
         /*
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         self.window?.makeKeyAndVisible()
@@ -32,8 +34,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if let window = self.window{
             window.rootViewController = sideMenu
-        }
-        */
+        }*/
+        
+        model = Model()
         return true
     }
 

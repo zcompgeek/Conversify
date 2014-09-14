@@ -9,9 +9,10 @@
 import UIKit
 
 class MasterViewController: UITableViewController {
+    
 
     var threads : [Conversation] = []
-    var model = Model()
+    var model : Model?
 
     var doneButton : UIBarButtonItem!
     @IBOutlet var plusButton: UIBarButtonItem!

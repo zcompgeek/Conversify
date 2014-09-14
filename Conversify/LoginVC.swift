@@ -10,12 +10,14 @@ import UIKit
 
 class LoginVC: UIViewController,UITextFieldDelegate {
     
-    
     @IBOutlet var txtUsername : UITextField!
     @IBOutlet var txtPassword : UITextField!
+    let model : Model = (UIApplication.sharedApplication().delegate as AppDelegate).model!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
         
         // Do any additional setup after loading the view.
     }
@@ -39,7 +41,21 @@ class LoginVC: UIViewController,UITextFieldDelegate {
     @IBAction func signinTapped(sender : UIButton) {
         var username:NSString = txtUsername.text
         var password:NSString = txtPassword.text
+
         
+        if model.attemptLogin("", userPhone: "") {
+            self.dismissViewControllerAnimated(true, completion: nil)
+            
+        } else {
+            var alertView:UIAlertView = UIAlertView()
+            alertView.title = "Sign in Failed!"
+            alertView.message = "Please enter Username and Phone Number"
+            alertView.delegate = self
+            alertView.addButtonWithTitle("OK")
+            alertView.show()
+        }
+        
+        /*
         if ( username.isEqualToString("") || password.isEqualToString("") ) {
             
             var alertView:UIAlertView = UIAlertView()
@@ -129,7 +145,7 @@ class LoginVC: UIViewController,UITextFieldDelegate {
                 alertView.addButtonWithTitle("OK")
                 alertView.show()
             }
-        }
+        }*/
         
     }
     
