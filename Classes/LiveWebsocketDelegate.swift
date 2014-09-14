@@ -11,6 +11,7 @@ import Foundation
 protocol LiveWebsocketProtocol {
     func onLiveWebsocketReceiveMessage(text: String)
     func sendLiveWebsocketMessage(obj: AnyObject)
+    func setLiveWebsocketState(state: Int)
     
 }
 
@@ -24,11 +25,14 @@ class LiveWebsocketDelegate : WebsocketDelegate {
     
     func websocketDidConnect() {
         println("Live Websocket is connected")
-        //delegate?.sendLiveWebsocketMessage(["method":"getMessagesInConversation", "arguments":[1]])
+        delegate?.setLiveWebsocketState(1)
     }
     
     func websocketDidDisconnect(error: NSError?) {
-        println("Live Websocket is disconnected: \(error!.localizedDescription)")
+        if error != nil {
+            println("Live Websocket is disconnected: \(error!.localizedDescription)")
+        }
+        delegate?.setLiveWebsocketState(0)
     }
     
     func websocketDidWriteError(error: NSError?) {

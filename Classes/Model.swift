@@ -22,9 +22,10 @@ class Model: LiveWebsocketProtocol, PassiveWebsocketProtocol {
     // Note: Websocket needs a delegate to listen to requests, and my class structure
     // requires that delegate to have this model act as a delegate in return
     var liveWebsocketLink = "ws://conversify.herokuapp.com/broadcast"
-    var passiveWebsocketLink = "ws://conversify.herokuapp.com/updates"
-    var liveWebsocketDelegate : LiveWebsocketDelegate?
-    var passiveWebsocketDelegate : PassiveWebsocketDelegate?
+    var passiveWebsocketLink = "ws://conversify.herokuapp.com/update"
+    var liveWebsocketDelegate: LiveWebsocketDelegate?
+    var passiveWebsocketDelegate: PassiveWebsocketDelegate?
+    var liveWebsocketState = 0, passiveWebsocketState = 0
     
     //var liveWebsocket = Websocket(url: NSURL.URLWithString("ws://conversify.herokuapp.com/broadcast"))
     
@@ -96,27 +97,29 @@ class Model: LiveWebsocketProtocol, PassiveWebsocketProtocol {
     }
     
     func sendLiveWebsocketMessage(obj: AnyObject) {
-        liveWebsocket.writeString(JSONStringify(obj))
+        var str = JSONStringify(obj)
+        liveWebsocket.writeString(str)
+    }
+    
+    func setLiveWebsocketState(state: Int) {
+        liveWebsocketState = state
     }
     
     // +++++++++++ Passive Websocket +++++++++++
     
-    func onPassiveWebsocketReceiveData(data: NSData) {
-        println("App received data in Passive socket")
-        // Call VC delegate that there's new data
-    }
-    
     func onPassiveWebsocketReceiveMessage(text: String) {
-        println("App received message '\(text)' in Passive socket")
+        println("App received message '\(text)' in passive socket")
         // Call VC delegate that there's new data
     }
     
-    func sendPassiveWebsocketMessage(text: String) {
-        passiveWebsocket.writeString(text)
+    func sendPassiveWebsocketMessage(obj: AnyObject) {
+        //var str = JSONStringify(obj)
+        //println(str)
+        passiveWebsocket.writeString(JSONStringify(obj))
     }
     
-    func sendPassiveWebsocketData(data: NSData) {
-        passiveWebsocket.writeData(data)
+    func setPassiveWebsocketState(state: Int) {
+        passiveWebsocketState = state
     }
     
     // ----------- Groups -----------
