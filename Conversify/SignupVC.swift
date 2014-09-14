@@ -46,8 +46,9 @@ class SignupVC: UIViewController {
         var password:NSString = txtPassword.text as NSString
         var confirm_password:NSString = txtConfirmPassword.text as NSString
         
+
+        
         if ( username.isEqualToString("") || password.isEqualToString("") ) {
-            
             var alertView:UIAlertView = UIAlertView()
             alertView.title = "Sign Up Failed!"
             alertView.message = "Please enter Username and Password"

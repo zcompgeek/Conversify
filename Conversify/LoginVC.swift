@@ -16,9 +16,6 @@ class LoginVC: UIViewController,UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
-        
         // Do any additional setup after loading the view.
     }
     
