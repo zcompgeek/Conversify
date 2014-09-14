@@ -25,6 +25,7 @@
 		B025B20019C4116600BD13A3 /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = B025B1FF19C4116600BD13A3 /* Set.swift */; };
 		B025B20219C4224900BD13A3 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B025B20119C4224900BD13A3 /* SideMenuViewController.swift */; };
 		B025B20419C4248100BD13A3 /* SideMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B025B20319C4248100BD13A3 /* SideMenuViewController.xib */; };
+		B04E256619C55229005218E3 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04E256519C55229005218E3 /* MenuViewController.swift */; };
 		B054578819C4CC47001BBD04 /* threadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B054578719C4CC47001BBD04 /* threadTableViewCell.swift */; };
 		B054578A19C4D87B001BBD04 /* threadTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B054578919C4D87B001BBD04 /* threadTableViewCell.xib */; };
 		B054578C19C507AB001BBD04 /* NewMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B054578B19C507AB001BBD04 /* NewMessageViewController.swift */; };
@@ -72,6 +73,7 @@
 		B025B1FF19C4116600BD13A3 /* Set.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Set.swift; sourceTree = "<group>"; };
 		B025B20119C4224900BD13A3 /* SideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SideMenuViewController.swift; path = ../Classes/SideMenuViewController.swift; sourceTree = "<group>"; };
 		B025B20319C4248100BD13A3 /* SideMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideMenuViewController.xib; sourceTree = "<group>"; };
+		B04E256519C55229005218E3 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		B054578719C4CC47001BBD04 /* threadTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = threadTableViewCell.swift; sourceTree = "<group>"; };
 		B054578919C4D87B001BBD04 /* threadTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = threadTableViewCell.xib; sourceTree = "<group>"; };
 		B054578B19C507AB001BBD04 /* NewMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMessageViewController.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 				B025B1D619C40B3E00BD13A3 /* MasterViewController.swift */,
 				B025B1D819C40B3E00BD13A3 /* DetailViewController.swift */,
 				B025B1DA19C40B3E00BD13A3 /* Main.storyboard */,
+				B04E256519C55229005218E3 /* MenuViewController.swift */,
 				B054578D19C51772001BBD04 /* NewThreadViewController.swift */,
 				B054578B19C507AB001BBD04 /* NewMessageViewController.swift */,
 				B054578919C4D87B001BBD04 /* threadTableViewCell.xib */,
@@ -329,6 +332,7 @@
 				B054579019C519F7001BBD04 /* Conversation.swift in Sources */,
 				3E00E8F019C41A4300DF96BE /* User.swift in Sources */,
 				B054579519C52B4B001BBD04 /* LoginVC.swift in Sources */,
+				B04E256619C55229005218E3 /* MenuViewController.swift in Sources */,
 				B054579619C52B4B001BBD04 /* SignupVC.swift in Sources */,
 				3E00E90219C4819B00DF96BE /* PassiveWebsocketDelegate.swift in Sources */,
 				3E00E90419C496E200DF96BE /* Message.swift in Sources */,

@@ -239,7 +239,7 @@
         <!--Menu-->
         <scene sceneID="0s1-dn-HBj">
             <objects>
-                <viewController title="Menu" id="eUH-5Q-kiZ" sceneMemberID="viewController">
+                <viewController title="Menu" id="eUH-5Q-kiZ" customClass="MenuViewController" customModule="Conversify" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Gkr-uz-OQF"/>
                         <viewControllerLayoutGuide type="bottom" id="Ya4-Vx-ruZ"/>
@@ -270,6 +270,10 @@
                         <color key="backgroundColor" red="0.68573928809999996" green="0.88669281909999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="segControl" destination="WAY-u2-bN4" id="XQk-iH-5F6"/>
+                        <outlet property="tableView" destination="zCW-pP-5oY" id="n2q-Av-hl2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UqO-q4-uID" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

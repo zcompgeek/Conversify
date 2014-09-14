@@ -15,6 +15,7 @@ class MasterViewController: UITableViewController {
 
     var doneButton : UIBarButtonItem!
     @IBOutlet var plusButton: UIBarButtonItem!
+    @IBOutlet var menuButton: UIBarButtonItem!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -71,6 +72,11 @@ class MasterViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let buttonPress: AnyObject = sender {
             if buttonPress as? UIBarButtonItem == plusButton {return}
+        }
+        if let buttonPress: AnyObject = sender {
+            if buttonPress as? UIBarButtonItem == menuButton {
+                return
+            }
         }
         if segue.identifier == "showDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow() {
