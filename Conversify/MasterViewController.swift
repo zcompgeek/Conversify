@@ -36,12 +36,7 @@ class MasterViewController: UITableViewController {
         //self.navigationItem.rightBarButtonItem = addButton
         currentGroup = 0
         currentTab = 0
-        /*
-        self.refreshControl = UIRefreshControl()
-        self.refreshControl?.attributedTitle = NSAttributedString(string: "Pull to refersh")
-        self.refreshControl?.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
-        self.tableView?.addSubview(refreshControl!)
-        */
+
         self.tableView.estimatedRowHeight = 150
         self.tableView.rowHeight = UITableViewAutomaticDimension
 
