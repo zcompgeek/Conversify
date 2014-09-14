@@ -19,7 +19,7 @@ class NewMessageViewController : UIViewController {
             if buttonPress as? UIBarButtonItem != sendButton {return}
         }
         if (!messageField.text.isEmpty) {
-            messageToSend = Message(text: messageField.text)
+            messageToSend = Message(message_id: 0, sender_id: 0, text: messageField.text, timestamp: 10 )
         }
         
     }

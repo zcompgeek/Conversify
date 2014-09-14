@@ -8,14 +8,14 @@
 
 class Message {
     var text : String!
-    var message_id : int!
-    var sender_id : int!
-    var timestamp : int!
+    var message_id : Int!
+    var sender_id : Int!
+    var timestamp : Int!
     
-    init(message_id: int, sender_id: int, text: String, timestamp: int) {
+    init(message_id: Int, sender_id: Int, text: String, timestamp: Int) {
         self.message_id = message_id
         self.sender_id = sender_id
         self.text = text
-        self.timestamp = timsetamp
+        self.timestamp = timestamp
     }
 }

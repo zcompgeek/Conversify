@@ -19,7 +19,7 @@ class NewThreadViewController : UIViewController {
             if buttonPress as? UIBarButtonItem != doneButton {return}
         }
         if (!nameField.text.isEmpty) {
-            threadToAdd = Conversation(name: nameField.text)
+            threadToAdd = Conversation(conversation_id: random(), name: nameField.text)
         }
         
     }
