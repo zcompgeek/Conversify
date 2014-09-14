@@ -45,17 +45,16 @@ class Model: LiveWebsocketProtocol, PassiveWebsocketProtocol {
     
     // +++++++++++ Initial Stuff +++++++++++
     
-    func attemptAuthenticateUser() -> Bool {
-        println("authenticating")
+    func attemptAuthenticateUser() {
+        println("authenticating ID:\(curUser.userID)")
         if curUser.userID == nil {
-            return false
+            return
         }
         var request = [
-            "methodName":"authenticateUser",
+            "method":"authenticateUser",
             "arguments":[curUser.userID!, curUser.deviceID!]
         ]
         sendPassiveWebsocketMessage(request)
-        return true
         
     }
     
@@ -67,13 +66,12 @@ class Model: LiveWebsocketProtocol, PassiveWebsocketProtocol {
     
     /// Loads data that was stored between sessions
     func loadPersistentData() {
-        curUser.deviceID = UIDevice.currentDevice().identifierForVendor
-        var storedVars = NSUserDefaults()
-        curUser.userID = storedVars.stringForKey("userID")
-        curUser.userPhone = storedVars.stringForKey("userPhone")
-        curUser.userEmail = storedVars.stringForKey("userEmail")
-        curUser.userName = storedVars.stringForKey("userName")
-        userAuthenticated = attemptAuthenticateUser()
+        curUser.deviceID = UIDevice.currentDevice().identifierForVendor.UUIDString
+        var storedVars = NSUserDefaults.standardUserDefaults()
+        curUser.userID = storedVars.objectForKey("userID") as? String
+        curUser.userPhone = storedVars.objectForKey("userPhone") as? String
+        curUser.userEmail = storedVars.objectForKey("userEmail") as? String
+        curUser.userName = storedVars.objectForKey("userName") as? String
     }
     
     // +++++++++++ Live Websocket +++++++++++
@@ -99,20 +97,41 @@ class Model: LiveWebsocketProtocol, PassiveWebsocketProtocol {
     
     func onPassiveWebsocketReceiveMessage(text: String) {
         println("App received message '\(text)' in passive socket")
-        var obj = JSON.parse(text)["object"]
+        var obj = JSON.parse(text)
         if ((obj[1][0].asString == "failure") || obj[1][0].isNull) {
             println("Failed query. \(obj)")
             return
         }
-        var method = obj["methodName"].asString
+        println(obj)
+        var method = obj["methodName"].asString!
+        println(method)
         if method == "authenticateUser" {
-            userAuthenticated = obj[1][1].asString == "true" ? 1 : 0
+            userAuthenticated = obj["results"][1].asString == "true" ? 1 : 0
+        } else if method == "addUser" {
+            curUser.userID = obj["results"][1].asString
+            println("IDDD: \(curUser.userID)")
+            var storedVars = NSUserDefaults.standardUserDefaults()
+            storedVars.setObject(curUser.userID, forKey: "userID")
+        }
+    }
+    
+    func JSONStringify(jsonObj: AnyObject) -> String {
+        var e: NSError?
+        let jsonData: NSData! = NSJSONSerialization.dataWithJSONObject(
+            jsonObj,
+            options: NSJSONWritingOptions(0),
+            error: &e)
+        if e != nil {
+            return ""
+        } else {
+            return NSString(data: jsonData, encoding: NSUTF8StringEncoding)
         }
     }
     
     func sendPassiveWebsocketMessage(obj: AnyObject) {
-        println("\(JSON(obj).toString())")
-        passiveWebsocket.writeString(JSON(obj).toString())
+        var str = JSON(obj).toString()
+        println(str)
+        passiveWebsocket.writeString(str)
     }
     
     func setPassiveWebsocketState(state: Int) {
@@ -145,17 +164,19 @@ class Model: LiveWebsocketProtocol, PassiveWebsocketProtocol {
     // ----------- User Settings -----------
     // Note that init places us in an infinite loop on the func that calls this submit until we successfully authenticate w/ db
     
-    func submitRegistration(userID: String, userName: String, userEmail: String, userPhone: String) {
-        curUser.userID = userID
+    func submitRegistration(userName: String, userEmail: String, userPhone: String) {
+        var storedVars = NSUserDefaults.standardUserDefaults()
         curUser.userName = userName
         curUser.userEmail = userEmail
         curUser.userPhone = userPhone
-        var curTime: NSDate = NSDate.date()
+        storedVars.setObject(userName, forKey: "userName")
+        storedVars.setObject(userEmail, forKey: "userEmail")
+        storedVars.setObject(userPhone, forKey: "userPhone")
+        var curTime = NSDate.date().timeIntervalSince1970
         var request = [
-            "methodName":"updateUser",
+            "method":"addUser",
             "arguments": [
-                userID, userName, userEmail, userPhone,
-                curUser.deviceID!, curTime
+                userName, userEmail, userPhone, curUser.deviceID!, curTime
             ]
         ]
         sendPassiveWebsocketMessage(request)

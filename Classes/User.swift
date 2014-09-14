@@ -9,10 +9,13 @@
 import Foundation
 
 class User {
-    var userID, userName, userEmail, userPhone: String?
-    var deviceID: NSUUID?
+    var userID, userName, userEmail, userPhone, deviceID: String?
     
     init() {
-        
+        userID = ""
+        userName = ""
+        userEmail = ""
+        userPhone = ""
+        deviceID = ""
     }
 }
