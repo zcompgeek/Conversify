@@ -30,6 +30,9 @@
 		B054578C19C507AB001BBD04 /* NewMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B054578B19C507AB001BBD04 /* NewMessageViewController.swift */; };
 		B054578E19C51772001BBD04 /* NewThreadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B054578D19C51772001BBD04 /* NewThreadViewController.swift */; };
 		B054579019C519F7001BBD04 /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B054578F19C519F7001BBD04 /* Conversation.swift */; };
+		B054579419C52B4B001BBD04 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B054579119C52B4B001BBD04 /* HomeVC.swift */; };
+		B054579519C52B4B001BBD04 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B054579219C52B4B001BBD04 /* LoginVC.swift */; };
+		B054579619C52B4B001BBD04 /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B054579319C52B4B001BBD04 /* SignupVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +76,9 @@
 		B054578B19C507AB001BBD04 /* NewMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMessageViewController.swift; sourceTree = "<group>"; };
 		B054578D19C51772001BBD04 /* NewThreadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewThreadViewController.swift; sourceTree = "<group>"; };
 		B054578F19C519F7001BBD04 /* Conversation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
+		B054579119C52B4B001BBD04 /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		B054579219C52B4B001BBD04 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		B054579319C52B4B001BBD04 /* SignupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +146,9 @@
 			children = (
 				B025B20119C4224900BD13A3 /* SideMenuViewController.swift */,
 				B025B20319C4248100BD13A3 /* SideMenuViewController.xib */,
+				B054579119C52B4B001BBD04 /* HomeVC.swift */,
+				B054579219C52B4B001BBD04 /* LoginVC.swift */,
+				B054579319C52B4B001BBD04 /* SignupVC.swift */,
 				B025B1D419C40B3E00BD13A3 /* AppDelegate.swift */,
 				B025B1D619C40B3E00BD13A3 /* MasterViewController.swift */,
 				B025B1D819C40B3E00BD13A3 /* DetailViewController.swift */,
@@ -309,9 +318,12 @@
 				B054578819C4CC47001BBD04 /* threadTableViewCell.swift in Sources */,
 				B054579019C519F7001BBD04 /* Conversation.swift in Sources */,
 				3E00E8F019C41A4300DF96BE /* User.swift in Sources */,
+				B054579519C52B4B001BBD04 /* LoginVC.swift in Sources */,
+				B054579619C52B4B001BBD04 /* SignupVC.swift in Sources */,
 				3E00E90219C4819B00DF96BE /* PassiveWebsocketDelegate.swift in Sources */,
 				3E00E90419C496E200DF96BE /* Message.swift in Sources */,
 				B025B1FA19C40BAA00BD13A3 /* JDSideMenu.m in Sources */,
+				B054579419C52B4B001BBD04 /* HomeVC.swift in Sources */,
 				B025B1D519C40B3E00BD13A3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

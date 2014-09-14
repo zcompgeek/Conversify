@@ -36,6 +36,7 @@
                     <constraint firstItem="bgn-0s-Z3q" firstAttribute="leading" secondItem="0dW-nn-2Fe" secondAttribute="leadingMargin" id="iBC-dg-v94"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" red="0.68573928809999996" green="0.88669281909999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
                 <outlet property="messageLabel" destination="bgn-0s-Z3q" id="Mdj-y1-RYu"/>
                 <outlet property="senderLabel" destination="emN-I2-Zqg" id="uTI-KJ-Ldm"/>
