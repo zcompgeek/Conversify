@@ -14,7 +14,7 @@ class Model: LiveWebsocketProtocol, PassiveWebsocketProtocol {
     
     var curUser = User()
     var curGroups: [String:Group?] = Dictionary<String,Group?>()
-    var curConverserations: [String:Conversation] = Dictionary<String,Conversation>()
+    var curConversations: [String:Conversation?] = Dictionary<String,Conversation?>()
     var curMessages: [String:Message] = Dictionary<String,Message>()
     var userAuthenticated = false
     var messagesLoaded = false
@@ -62,6 +62,14 @@ class Model: LiveWebsocketProtocol, PassiveWebsocketProtocol {
     
     func pullAllData() {
         getGroupsForUser(curUser.userID!)
+        waitingOnPull = 1
+        while waitingOnPull != 0 {
+            sleep(1)
+        }
+        for groupid in curGroups.keys {
+            getConversationsByGroupID(groupid)
+        }
+        waitingOnPull = 1
         while waitingOnPull != 0 {
             sleep(1)
         }
@@ -134,7 +142,14 @@ class Model: LiveWebsocketProtocol, PassiveWebsocketProtocol {
             println(curGroups)
             waitingOnPull = 0
         } else if method == "getConversationsForGroup" {
-            
+            curConversations = Dictionary<String,Conversation?>()
+            for i in 1..<obj["results"].length {
+                println(i)
+                println(obj["results"][i].asString!)
+                curConversations[(obj["results"][i].asString)!] = Conversation(conversation_id: (obj["results"][i][0].asInt)!, name: (obj["results"][i][1].asString)!)
+            }
+            println(curConversations)
+            waitingOnPull = 0
         }
     }
     
@@ -205,7 +220,7 @@ class Model: LiveWebsocketProtocol, PassiveWebsocketProtocol {
     
     func getConversationsByGroupID(groupID: String) {
         var request = [
-            "method":"getConversationsForGroup",
+            "method":"getUserConversationForGroup",
             "arguments":[groupID, curUser.userID!]
         ]
         sendPassiveWebsocketMessage(request)
