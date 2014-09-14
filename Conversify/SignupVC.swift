@@ -50,11 +50,5 @@ class SignupVC: UIViewController {
         
         self.dismissViewControllerAnimated(true, completion: nil)
         return
-
-            }
-    
-    func textFieldShouldReturn(textField: UITextField!) -> Bool {   //delegate method
-        textField.resignFirstResponder()
-        return true
     }
 }
