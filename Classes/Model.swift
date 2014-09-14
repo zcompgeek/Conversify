@@ -80,7 +80,7 @@ class Model: LiveWebsocketProtocol, PassiveWebsocketProtocol {
     func onLiveWebsocketReceiveMessage(text: String) {
         println("App received message '\(text)' in live socket")
         var obj = JSON.parse(text)["object"]
-        var message : Message = Message(obj["message_id"], obj["sender_id"], obj["content"], obj["time_update"])
+       // var message : Message = Message(obj["message_id"], obj["sender_id"], obj["content"], obj["time_update"])
         /*// get conversation instance from id:
         convo = conversations[obj["conversation_id"]]
         if (convo != nil) {
@@ -120,27 +120,6 @@ class Model: LiveWebsocketProtocol, PassiveWebsocketProtocol {
             println("IDDD: \(curUser.userID)")
             var storedVars = NSUserDefaults.standardUserDefaults()
             storedVars.setObject(curUser.userID, forKey: "userID")
-        }
-    }
-    
-    func JSONStringify(jsonObj: AnyObject) -> String {
-        var e: NSError?
-        let jsonData: NSData! = NSJSONSerialization.dataWithJSONObject(
-            jsonObj,
-            options: NSJSONWritingOptions(0),
-            error: &e)
-        if e != nil {
-            return ""
-        } else {
-            return NSString(data: jsonData, encoding: NSUTF8StringEncoding)
-        }
-        if method == "getUserMessages" {
-            for i in 1...obj[1].length{
-                var msg = obj[1][i]
-                var message = Message(msg["message_id"].asString,msg["sender_id"].asString,
-                    msg["message_text"].asString, msg["time_updated"].asString)
-                curMessages[msg["message_id"]] = message
-            }
         }
     }
     
