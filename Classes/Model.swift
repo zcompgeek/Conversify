@@ -117,7 +117,6 @@ class Model: LiveWebsocketProtocol, PassiveWebsocketProtocol {
             userAuthenticated = obj["results"][1].asString == "true" ? 1 : 0
         } else if method == "addUser" {
             curUser.userID = obj["results"][1].asString
-            println("IDDD: \(curUser.userID)")
             var storedVars = NSUserDefaults.standardUserDefaults()
             storedVars.setObject(curUser.userID, forKey: "userID")
         } else if method == "getConversationsForGroup" {
@@ -156,6 +155,14 @@ class Model: LiveWebsocketProtocol, PassiveWebsocketProtocol {
            // result.append(pullGroupData(groupID))
         }
         return result
+    }
+    
+    func getGroupsForUser(userID : String) {
+        var request = [
+            "method":"getGroupsForUser",
+            "arguments":[userID]
+        ]
+        sendPassiveWebsocketMessage(request)
     }
     
     // ----------- User Settings -----------
