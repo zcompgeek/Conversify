@@ -26,6 +26,7 @@
 		B025B20219C4224900BD13A3 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B025B20119C4224900BD13A3 /* SideMenuViewController.swift */; };
 		B025B20419C4248100BD13A3 /* SideMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B025B20319C4248100BD13A3 /* SideMenuViewController.xib */; };
 		B04E256619C55229005218E3 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04E256519C55229005218E3 /* MenuViewController.swift */; };
+		B04E256819C557AC005218E3 /* json.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04E256719C557AC005218E3 /* json.swift */; };
 		B054578819C4CC47001BBD04 /* threadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B054578719C4CC47001BBD04 /* threadTableViewCell.swift */; };
 		B054578A19C4D87B001BBD04 /* threadTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B054578919C4D87B001BBD04 /* threadTableViewCell.xib */; };
 		B054578C19C507AB001BBD04 /* NewMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B054578B19C507AB001BBD04 /* NewMessageViewController.swift */; };
@@ -73,6 +74,7 @@
 		B025B20119C4224900BD13A3 /* SideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SideMenuViewController.swift; path = ../Classes/SideMenuViewController.swift; sourceTree = "<group>"; };
 		B025B20319C4248100BD13A3 /* SideMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideMenuViewController.xib; sourceTree = "<group>"; };
 		B04E256519C55229005218E3 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		B04E256719C557AC005218E3 /* json.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = json.swift; sourceTree = "<group>"; };
 		B054578719C4CC47001BBD04 /* threadTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = threadTableViewCell.swift; sourceTree = "<group>"; };
 		B054578919C4D87B001BBD04 /* threadTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = threadTableViewCell.xib; sourceTree = "<group>"; };
 		B054578B19C507AB001BBD04 /* NewMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMessageViewController.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 		3EEB239119C52B10004CE4B3 /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
+				B04E256719C557AC005218E3 /* json.swift */,
 				3E00E8F919C430BA00DF96BE /* Websocket.swift */,
 			);
 			name = Dependencies;
@@ -322,11 +325,11 @@
 				B054578C19C507AB001BBD04 /* NewMessageViewController.swift in Sources */,
 				B025B1D919C40B3E00BD13A3 /* DetailViewController.swift in Sources */,
 				3E00E90019C4765400DF96BE /* LiveWebsocketDelegate.swift in Sources */,
+				B04E256819C557AC005218E3 /* json.swift in Sources */,
 				3E00E8E719C4138200DF96BE /* Group.swift in Sources */,
 				B025B20219C4224900BD13A3 /* SideMenuViewController.swift in Sources */,
 				B025B1D719C40B3E00BD13A3 /* MasterViewController.swift in Sources */,
 				3E00E8EB19C413B800DF96BE /* Model.swift in Sources */,
-				3EEB239519C55688004CE4B3 /* json.swift in Sources */,
 				B054578819C4CC47001BBD04 /* threadTableViewCell.swift in Sources */,
 				B054579019C519F7001BBD04 /* Conversation.swift in Sources */,
 				3E00E8F019C41A4300DF96BE /* User.swift in Sources */,

@@ -11,7 +11,7 @@ import UIKit
 class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
                             
     @IBOutlet weak var tableView: UITableView!
-    //@IBOutlet var addButton: UIButton!
+    @IBOutlet weak var optInSwitch: UISwitch!
 
     @IBAction func unwindToList(segue: UIStoryboardSegue) {
         var source : NewMessageViewController = segue.sourceViewController as NewMessageViewController
@@ -34,14 +34,20 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func configureView() {
         // Update the user interface for the detail item.
         
-        ///if let detail: [String] = self.detailItem {
-            
-        //}
+        if let thread : Conversation = self.detailItem {
+            optInSwitch.on = thread.optIn
+        }
         
         
         
     }
 
+    override func willMoveToParentViewController(parent: UIViewController?) {
+        if let thread : Conversation = detailItem {
+            thread.optIn = optInSwitch.on
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

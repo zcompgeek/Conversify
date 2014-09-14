@@ -10,25 +10,36 @@ class MenuViewController : UIViewController, UITableViewDataSource, UITableViewD
     
     @IBOutlet var tableView : UITableView!
     @IBOutlet var segControl : UISegmentedControl!
-    var 
+    var groups : ([Group])!
+    var segNum : Int!
+    var grpNum : Int!
+    
+    override func viewDidLoad() {
+        groups = [Group(name: "PGC"),Group(name: "Penn Dance"),Group(name: "SigEp")]
+        tableView.selectRowAtIndexPath(NSIndexPath(forRow: grpNum, inSection: 0), animated: false, scrollPosition: UITableViewScrollPosition.None)
+        segControl.selectedSegmentIndex = segNum
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        grpNum = tableView.indexPathForSelectedRow()?.item
+        segNum = segControl.selectedSegmentIndex
+    }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let cells = detailItem {
-            return cells.messages.count
-        }
-        println("error in table")
-        return 0
+        return groups.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell:threadTableViewCell = self.tableView.dequeueReusableCellWithIdentifier("threadCell") as threadTableViewCell
+        var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("groupCell", forIndexPath: indexPath) as UITableViewCell
         
-        // this is how you extract values from a tuple
-        if let convo = detailItem {
-            var message = convo.messages[indexPath.row].text
-            cell.loadItem(message: message, sender: "Bob")
+        if let label = cell.textLabel {
+            label.text =  groups[indexPath.row].groupName
+            label.textAlignment = NSTextAlignment.Center
         }
+        
+        
         return cell
     }
+    
     
 }

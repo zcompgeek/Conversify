@@ -9,9 +9,11 @@
 class Conversation {
     var name : String!
     var messages : [Message]
+    var optIn: Bool
     
     init(name: String) {
         self.name = name
         messages = []
+        optIn = true
     }
 }
