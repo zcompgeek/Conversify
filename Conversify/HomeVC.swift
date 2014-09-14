@@ -11,6 +11,8 @@ import UIKit
 class HomeVC: UIViewController {
 
     @IBOutlet var usernameLabel : UILabel!
+    var model : Model!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +22,8 @@ class HomeVC: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
+        model = (UIApplication.sharedApplication().delegate as AppDelegate).model!
+        model.pullAllData()
         
         let prefs:NSUserDefaults = NSUserDefaults.standardUserDefaults()
         let isLoggedIn:Int = prefs.integerForKey("ISLOGGEDIN") as Int
