@@ -13,6 +13,7 @@ class MasterViewController: UITableViewController {
     var objects : [[String]] = []
     var model = Model()
 
+    var doneButton : UIBarButtonItem!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,8 +26,8 @@ class MasterViewController: UITableViewController {
         // Do any additional setup after loading the view, typically from a nib.
         self.navigationItem.leftBarButtonItem = self.editButtonItem()
 
-        let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject:")
-        self.navigationItem.rightBarButtonItem = addButton
+        //let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject:")
+        //self.navigationItem.rightBarButtonItem = addButton
         
         self.tableView.estimatedRowHeight = 150
         self.tableView.rowHeight = UITableViewAutomaticDimension
@@ -37,6 +38,17 @@ class MasterViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func unwindToList(segue: UIStoryboardSegue) {
+        var source : NewThreadViewController = segue.sourceViewController as NewThreadViewController
+        if let thread = source.threadToAdd {
+            if let cells = detailItem {
+                //replace with send command
+                println("Sent \(message.text)")
+                tableView.reloadData()
+            }
+        }
     }
 
     func insertNewObject(sender: AnyObject) {

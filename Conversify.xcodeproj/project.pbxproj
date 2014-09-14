@@ -34,6 +34,7 @@
 		B054578819C4CC47001BBD04 /* threadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B054578719C4CC47001BBD04 /* threadTableViewCell.swift */; };
 		B054578A19C4D87B001BBD04 /* threadTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B054578919C4D87B001BBD04 /* threadTableViewCell.xib */; };
 		B054578C19C507AB001BBD04 /* NewMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B054578B19C507AB001BBD04 /* NewMessageViewController.swift */; };
+		B054578E19C51772001BBD04 /* NewThreadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B054578D19C51772001BBD04 /* NewThreadViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		B054578719C4CC47001BBD04 /* threadTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = threadTableViewCell.swift; sourceTree = "<group>"; };
 		B054578919C4D87B001BBD04 /* threadTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = threadTableViewCell.xib; sourceTree = "<group>"; };
 		B054578B19C507AB001BBD04 /* NewMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMessageViewController.swift; sourceTree = "<group>"; };
+		B054578D19C51772001BBD04 /* NewThreadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewThreadViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 				B025B1D619C40B3E00BD13A3 /* MasterViewController.swift */,
 				B025B1D819C40B3E00BD13A3 /* DetailViewController.swift */,
 				B025B1DA19C40B3E00BD13A3 /* Main.storyboard */,
+				B054578D19C51772001BBD04 /* NewThreadViewController.swift */,
 				B054578B19C507AB001BBD04 /* NewMessageViewController.swift */,
 				B054578919C4D87B001BBD04 /* threadTableViewCell.xib */,
 				B054578719C4CC47001BBD04 /* threadTableViewCell.swift */,
@@ -308,6 +311,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B054578E19C51772001BBD04 /* NewThreadViewController.swift in Sources */,
 				3E00E8F219C42CC700DF96BE /* ConversationsModel.swift in Sources */,
 				3E00E8FA19C430BA00DF96BE /* Websocket.swift in Sources */,
 				3E00E8F619C42E0D00DF96BE /* ComposeMessageModel.swift in Sources */,
