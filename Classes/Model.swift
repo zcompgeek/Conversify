@@ -81,7 +81,7 @@ class Model: LiveWebsocketProtocol, PassiveWebsocketProtocol {
     func onLiveWebsocketReceiveMessage(text: String) {
         println("App received message '\(text)' in live socket")
         var obj = JSON.parse(text)["object"]
-        var message = Message(obj["message_id"], obj["sender_id"], obj["content"], obj["time_update"])
+        var message : Message = Message(obj["message_id"], obj["sender_id"], obj["content"], obj["time_update"])
         /*// get conversation instance from id:
         convo = conversations[obj["conversation_id"]]
         if (convo != nil) {
