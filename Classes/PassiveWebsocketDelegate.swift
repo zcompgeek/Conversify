@@ -10,7 +10,8 @@ import Foundation
 
 protocol PassiveWebsocketProtocol {
     func onPassiveWebsocketReceiveMessage(text: String)
-    func onPassiveWebsocketReceiveData(data: NSData)
+    func sendPassiveWebsocketMessage(obj: AnyObject)
+    func setPassiveWebsocketState(state: Int)
     
 }
 
@@ -24,11 +25,14 @@ class PassiveWebsocketDelegate : WebsocketDelegate {
     
     func websocketDidConnect() {
         println("Passive Websocket is connected")
-        
+        delegate?.setPassiveWebsocketState(1)
     }
     
     func websocketDidDisconnect(error: NSError?) {
-        println("Passive Websocket is disconnected: \(error!.localizedDescription)")
+        if error != nil {
+            println("Passive Websocket is disconnected: \(error!.localizedDescription)")
+        }
+        delegate?.setPassiveWebsocketState(0)
     }
     
     func websocketDidWriteError(error: NSError?) {
@@ -43,7 +47,6 @@ class PassiveWebsocketDelegate : WebsocketDelegate {
     }
     func websocketDidReceiveData(data: NSData) {
         println("got some data: \(data.length)")
-        delegate?.onPassiveWebsocketReceiveData(data)
         //self.socket.writeData(data) //example on how to write binary data to the socket
     }
     
