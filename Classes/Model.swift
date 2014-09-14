@@ -14,6 +14,7 @@ class Model: LiveWebsocketProtocol, PassiveWebsocketProtocol {
     
     var curUser = User()
     var curGroups: [Group] = []
+    var curConverserations: [Conversation] = []
     var curMessages: [Message] = []
     var userAuthenticated = false
     var passiveWebsocket, liveWebsocket : Websocket
@@ -42,7 +43,12 @@ class Model: LiveWebsocketProtocol, PassiveWebsocketProtocol {
         liveWebsocket.connect()
         
         loadPersistentData()
-        // identify the user to fully populate curUser
+        userAuthenticated = attemptAuthenticateUser()
+        while !userAuthenticated {
+            // TODO show user registration modal
+            // TODO update curUser
+            userAuthenticated = attemptAuthenticateUser()
+        }
     }
     
     /// Loads data that was stored between sessions
@@ -53,8 +59,7 @@ class Model: LiveWebsocketProtocol, PassiveWebsocketProtocol {
         if curUser.userID == nil {
             return false
         }
-        // TODO Ask server if this deviceID, userID pair is present instead of assuming
-        // userID presence is true. If it's present, update phone, email, name
+        // TODO Ask server to authenticate user based on curUser.userID, curUser.deviceID
         return true
         
     }
@@ -103,6 +108,10 @@ class Model: LiveWebsocketProtocol, PassiveWebsocketProtocol {
     
     func setLiveWebsocketState(state: Int) {
         liveWebsocketState = state
+    }
+    
+    func warnWebsocketWriteFail(error: NSError?) {
+        println("WRITE FAILED. Error: \(error)")
     }
     
     // +++++++++++ Passive Websocket +++++++++++
