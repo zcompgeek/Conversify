@@ -120,6 +120,8 @@ class Model: LiveWebsocketProtocol, PassiveWebsocketProtocol {
             println("IDDD: \(curUser.userID)")
             var storedVars = NSUserDefaults.standardUserDefaults()
             storedVars.setObject(curUser.userID, forKey: "userID")
+        } else if method == "getConversationsForGroup" {
+            
         }
     }
     
@@ -196,6 +198,14 @@ class Model: LiveWebsocketProtocol, PassiveWebsocketProtocol {
     // ----------- CreateGroup (Modal) -----------
     
     // ----------- Conversations -----------
+    
+    func getConversationsByGroupID(groupID: String) {
+        var request = [
+            "method":"getConversationsForGroup",
+            "arguments":[groupID, curUser.userID!]
+        ]
+        sendPassiveWebsocketMessage(request)
+    }
     
     // ----------- GroupSettings (Modal) -----------
     
