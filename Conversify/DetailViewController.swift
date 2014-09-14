@@ -83,6 +83,10 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return cell
     }
     
+    func acceptNewMessage(message: Message) {
+        threadToAdd.messages.append(message)
+        tableView.reloadData()
+    }
 
 }
 

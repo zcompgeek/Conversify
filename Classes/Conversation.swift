@@ -7,11 +7,13 @@
 //
 
 class Conversation {
+    var conversation_id : int!
     var name : String!
     var messages : [Message]
     var optIn: Bool
     
-    init(name: String) {
+    init(conversation_id: int, name: String) {
+        self.conversation_id = conversation_id
         self.name = name
         messages = []
         optIn = true
