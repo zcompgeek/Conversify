@@ -26,7 +26,9 @@ class HomeVC: UIViewController {
         if (isLoggedIn != 1) {
             self.performSegueWithIdentifier("goto_login", sender: self)
         } else {
-            self.usernameLabel.text = prefs.valueForKey("USERNAME") as NSString
+            if prefs.valueForKey("userName") != nil {
+                self.usernameLabel.text = prefs.valueForKey("userName") as NSString
+            }
         }
     }
 

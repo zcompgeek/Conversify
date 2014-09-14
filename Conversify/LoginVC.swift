@@ -41,8 +41,9 @@ class LoginVC: UIViewController,UITextFieldDelegate {
 
         
         if model.attemptLogin("", userPhone: "") {
+            var prefs:NSUserDefaults = NSUserDefaults.standardUserDefaults()
+            prefs.setInteger(1, forKey: "ISLOGGEDIN")
             self.dismissViewControllerAnimated(true, completion: nil)
-            
         } else {
             var alertView:UIAlertView = UIAlertView()
             alertView.title = "Sign in Failed!"

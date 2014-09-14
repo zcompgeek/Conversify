@@ -46,6 +46,10 @@ class SignupVC: UIViewController {
         var password:NSString = txtPassword.text as NSString
         var confirm_password:NSString = txtConfirmPassword.text as NSString
         
+        model.submitRegistration(username, userEmail: password, userPhone: confirm_password)
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
+        return
 
         
         if ( username.isEqualToString("") || password.isEqualToString("") ) {
