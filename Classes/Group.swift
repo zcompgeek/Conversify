@@ -11,6 +11,10 @@ class Group {
     var groupID, groupName: String?
     var userIDs, adminIDs: Set<String>?
     
+    init(name: String) {
+        groupName = name
+    }
+    
     func addUser(userID: String) {
         userIDs?.addElement(userID)
     }

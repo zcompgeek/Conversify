@@ -8,8 +8,14 @@
 
 class Message {
     var text : String!
+    var message_id : int!
+    var sender_id : int!
+    var timestamp : int!
     
-    init(text: String) {
+    init(message_id: int, sender_id: int, text: String, timestamp: int) {
+        self.message_id = message_id
+        self.sender_id = sender_id
         self.text = text
+        self.timestamp = timsetamp
     }
 }

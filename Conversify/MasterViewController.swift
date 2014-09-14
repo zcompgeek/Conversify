@@ -14,8 +14,11 @@ class MasterViewController: UITableViewController {
     var threads : [Conversation] = []
     var model : Model?
 
+    var currentGroup : Int!
+    var currentTab : Int!
     var doneButton : UIBarButtonItem!
     @IBOutlet var plusButton: UIBarButtonItem!
+    @IBOutlet var menuButton: UIBarButtonItem!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -33,15 +36,18 @@ class MasterViewController: UITableViewController {
         threads.append(convo)
         
         // Do any additional setup after loading the view, typically from a nib.
-        self.navigationItem.leftBarButtonItem = self.editButtonItem()
+        //self.navigationItem.leftBarButtonItem = self.editButtonItem()
 
         //let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject:")
         //self.navigationItem.rightBarButtonItem = addButton
+        currentGroup = 0
+        currentTab = 0
         
         self.tableView.estimatedRowHeight = 150
         self.tableView.rowHeight = UITableViewAutomaticDimension
 
     }
+    
 
 
     override func didReceiveMemoryWarning() {
@@ -59,19 +65,33 @@ class MasterViewController: UITableViewController {
             
         }
     }
-    /*
-    func insertNewObject(sender: AnyObject) {
-        var messages = []
-        threads.insert(objectsEntry, atIndex: 0)
-        let indexPath = NSIndexPath(forRow: 0, inSection: 0)
-        self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
-    }*/
+    
+    @IBAction func unwindFromMenu(segue: UIStoryboardSegue) {
+        var source : MenuViewController = segue.sourceViewController as MenuViewController
+        if let seg = source.segNum {
+            currentTab = seg
+            println("On Seg \(seg)")
+        }
+        if let grp = source.grpNum {
+            currentGroup = grp
+            println("On Group \(grp)")
+        }
+        tableView.reloadData()
+    }
 
     // MARK: - Segues
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let buttonPress: AnyObject = sender {
             if buttonPress as? UIBarButtonItem == plusButton {return}
+        }
+        if let buttonPress: AnyObject = sender {
+            if buttonPress as? UIBarButtonItem == menuButton {
+                var destController : MenuViewController = (segue.destinationViewController as UINavigationController).viewControllers[0] as MenuViewController
+                destController.segNum = currentTab
+                destController.grpNum = currentGroup
+                return
+            }
         }
         if segue.identifier == "showDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow() {
@@ -98,10 +118,10 @@ class MasterViewController: UITableViewController {
         cell.textLabel?.text = convo.name
         return cell
     }
-
+/*
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
-        return true
+        return false
     }
 
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
@@ -112,7 +132,7 @@ class MasterViewController: UITableViewController {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
         }
     }
-
+*/
 
 }
 

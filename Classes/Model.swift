@@ -13,10 +13,11 @@ import UIKit
 class Model: LiveWebsocketProtocol, PassiveWebsocketProtocol {
     
     var curUser = User()
-    var curGroups: [Group] = []
-    var curConverserations: [Conversation] = []
-    var curMessages: [Message] = []
+    var curGroups: [String:Group] = Dictionary<String,Group>()
+    var curConverserations: [String:Conversation] = Dictionary<String,Conversation>()
+    var curMessages: [String:Message] = Dictionary<String,Message>()
     var userAuthenticated = false
+    var messagesLoaded = false
     var passiveWebsocket, liveWebsocket : Websocket
     
 
@@ -78,7 +79,14 @@ class Model: LiveWebsocketProtocol, PassiveWebsocketProtocol {
     
     func onLiveWebsocketReceiveMessage(text: String) {
         println("App received message '\(text)' in live socket")
-        // Call VC delegate that there's new data
+        var obj = JSON.parse(text)["object"]
+        var message : Message = Message(obj["message_id"], obj["sender_id"], obj["content"], obj["time_update"])
+        /*// get conversation instance from id:
+        convo = conversations[obj["conversation_id"]]
+        if (convo != nil) {
+            convo.messages.append(message)
+            // tell view to update if the correct conversation is currently open
+        }*/
     }
     
     func sendLiveWebsocketMessage(obj: AnyObject) {
@@ -125,6 +133,14 @@ class Model: LiveWebsocketProtocol, PassiveWebsocketProtocol {
             return ""
         } else {
             return NSString(data: jsonData, encoding: NSUTF8StringEncoding)
+        }
+        if method == "getUserMessages" {
+            for i in 1...obj[1].length{
+                var msg = obj[1][i]
+                var message = Message(msg["message_id"].asString,msg["sender_id"].asString,
+                    msg["message_text"].asString, msg["time_updated"].asString)
+                curMessages[msg["message_id"]] = message
+            }
         }
     }
     
@@ -207,6 +223,15 @@ class Model: LiveWebsocketProtocol, PassiveWebsocketProtocol {
     // ----------- Home -----------
     
     // ----------- Messages -----------
+    
+    func getMessagesByUserID(userID: String) -> Bool {
+        var request = [
+            "method":"getUserMessages",
+            "arguments":[userID]
+        ]
+        sendPassiveWebsocketMessage(request)
+        return true
+    }
     
     // ----------- ComposeMessages -----------
     
