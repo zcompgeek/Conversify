@@ -24,7 +24,7 @@ class LiveWebsocketDelegate : WebsocketDelegate {
     
     func websocketDidConnect() {
         println("Live Websocket is connected")
-        delegate?.sendLiveWebsocketMessage(["method":"getMessagesInConversation", "arguments":[1]])
+        //delegate?.sendLiveWebsocketMessage(["method":"getMessagesInConversation", "arguments":[1]])
     }
     
     func websocketDidDisconnect(error: NSError?) {
