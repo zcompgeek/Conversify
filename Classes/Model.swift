@@ -17,6 +17,7 @@ class Model: LiveWebsocketProtocol, PassiveWebsocketProtocol {
     var curConverserations: [String:Conversation] = Dictionary<String,Conversation>()
     var curMessages: [String:Message] = Dictionary<String,Message>()
     var userAuthenticated = false
+    var messagesLoaded = false
     var passiveWebsocket, liveWebsocket : Websocket
     
 
@@ -74,6 +75,7 @@ class Model: LiveWebsocketProtocol, PassiveWebsocketProtocol {
         curUser.userEmail = storedVars.stringForKey("userEmail")
         curUser.userName = storedVars.stringForKey("userName")
         userAuthenticated = attemptAuthenticateUser()
+        messagesLoaded = getMessagesByUserID()
     }
     
     // +++++++++++ Live Websocket +++++++++++
@@ -114,6 +116,14 @@ class Model: LiveWebsocketProtocol, PassiveWebsocketProtocol {
         var method = obj["methodName"].asString
         if method == "authenticateUser" {
             userAuthenticated = obj[1][1].asString == "true" ? 1 : 0
+        }
+        if method == "getUserMessages" {
+            for i in 1...obj[1].length{
+                var msg = obj[1][i]
+                var message = Message(msg["message_id"].asString,msg["sender_id"].asString,
+                    msg["message_text"].asString, msg["time_updated"].asString)
+                curMessages[msg["message_id"]] = message
+            }
         }
     }
     
@@ -193,6 +203,15 @@ class Model: LiveWebsocketProtocol, PassiveWebsocketProtocol {
     // ----------- Home -----------
     
     // ----------- Messages -----------
+    
+    func getMessagesByUserID(userID: String) -> Bool {
+        var request = [
+            "method":"getUserMessages",
+            "arguments":[userID]
+        ]
+        sendPassiveWebsocketMessage(request)
+        return true
+    }
     
     // ----------- ComposeMessages -----------
     
