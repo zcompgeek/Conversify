@@ -7,10 +7,12 @@
 //
 
 class Conversation {
+    var conversation_id : int!
     var name : String!
     var messages : [Message]
     
-    init(name: String) {
+    init(conversation_id: int, name: String) {
+        self.conversation_id = conversation_id
         self.name = name
         messages = []
     }
