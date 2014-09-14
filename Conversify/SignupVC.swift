@@ -13,6 +13,7 @@ class SignupVC: UIViewController {
     @IBOutlet var txtUsername : UITextField!
     @IBOutlet var txtPassword : UITextField!
     @IBOutlet var txtConfirmPassword : UITextField!
+    let model : Model = (UIApplication.sharedApplication().delegate as AppDelegate).model!
     
     override func viewDidLoad() {
         super.viewDidLoad()
