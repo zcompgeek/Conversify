@@ -10,10 +10,11 @@ import UIKit
 
 class MasterViewController: UITableViewController {
 
-    var objects : [[String]] = []
+    var threads : [Conversation] = []
     var model = Model()
 
     var doneButton : UIBarButtonItem!
+    @IBOutlet var plusButton: UIBarButtonItem!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,6 +23,13 @@ class MasterViewController: UITableViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+        var convo = Conversation(name: "Best Convo Ever")
+        convo.messages.append(Message(text: "Hi there Joe"))
+        convo.messages.append(Message(text: "What's Up?"))
+        convo.messages.append(Message(text: "YOU SUCK"))
+        convo.messages.append(Message(text: "..... :("))
+        threads.append(convo)
         
         // Do any additional setup after loading the view, typically from a nib.
         self.navigationItem.leftBarButtonItem = self.editButtonItem()
@@ -43,28 +51,31 @@ class MasterViewController: UITableViewController {
     @IBAction func unwindToList(segue: UIStoryboardSegue) {
         var source : NewThreadViewController = segue.sourceViewController as NewThreadViewController
         if let thread = source.threadToAdd {
-            if let cells = detailItem {
-                //replace with send command
-                println("Sent \(message.text)")
+                threads.append(thread)
+                //replace with new thread command
+                println("New Thread \(thread.name)")
                 tableView.reloadData()
-            }
+            
         }
     }
-
+    /*
     func insertNewObject(sender: AnyObject) {
-        var objectsEntry = ["Look at this awesomse email this awesomse email this awesomse email this awesomse email this awesomse email this awesomse email","Look at this awesomse email","Look at this awesomse email","Look at this awesomse email this awesomse email this awesomse email this awesomse email this awesomse email this awesomse email","Look at this awesomse email","Look at this awesomse email","Look at this awesomse email"]
-        objects.insert(objectsEntry, atIndex: 0)
+        var messages = []
+        threads.insert(objectsEntry, atIndex: 0)
         let indexPath = NSIndexPath(forRow: 0, inSection: 0)
         self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
-    }
+    }*/
 
     // MARK: - Segues
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let buttonPress: AnyObject = sender {
+            if buttonPress as? UIBarButtonItem == plusButton {return}
+        }
         if segue.identifier == "showDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow() {
-                let object = objects[indexPath.row]
-                (segue.destinationViewController as DetailViewController).detailItem = object
+                let convo = threads[indexPath.row]
+                (segue.destinationViewController as DetailViewController).detailItem = convo
             }
         }
     }
@@ -76,14 +87,14 @@ class MasterViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return objects.count
+        return threads.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("BCell", forIndexPath: indexPath) as UITableViewCell
 
-        let object = objects[indexPath.row]
-        cell.textLabel?.text = object[0]
+        let convo = threads[indexPath.row]
+        cell.textLabel?.text = convo.name
         return cell
     }
 
@@ -94,7 +105,7 @@ class MasterViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
-            objects.removeAtIndex(indexPath.row)
+            threads.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
