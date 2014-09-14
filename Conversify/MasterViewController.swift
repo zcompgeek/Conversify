@@ -13,6 +13,7 @@ class MasterViewController: UITableViewController {
 
     var threads : [Conversation] = []
     var model : Model?
+    //var refreshControl: UIRefreshControl!
 
     var currentGroup : Int!
     var currentTab : Int!
@@ -28,13 +29,6 @@ class MasterViewController: UITableViewController {
         
         super.viewDidLoad()
         
-        var convo = Conversation(name: "Best Convo Ever")
-        convo.messages.append(Message(text: "Hi there Joe"))
-        convo.messages.append(Message(text: "What's Up?"))
-        convo.messages.append(Message(text: "YOU SUCK"))
-        convo.messages.append(Message(text: "..... :("))
-        threads.append(convo)
-        
         // Do any additional setup after loading the view, typically from a nib.
         //self.navigationItem.leftBarButtonItem = self.editButtonItem()
 
@@ -43,12 +37,20 @@ class MasterViewController: UITableViewController {
         currentGroup = 0
         currentTab = 0
         
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl?.attributedTitle = NSAttributedString(string: "Pull to refersh")
+        self.refreshControl?.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+        self.tableView?.addSubview(refreshControl!)
+        
         self.tableView.estimatedRowHeight = 150
         self.tableView.rowHeight = UITableViewAutomaticDimension
 
     }
     
-
+    func refresh(sender:AnyObject)
+    {
+        // Code to refresh table view
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
