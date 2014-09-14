@@ -60,6 +60,13 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="CONVERSATIONS" id="tQt-TN-PWz">
+                        <barButtonItem key="leftBarButtonItem" image="hamburger" id="78B-6n-j6y">
+                            <connections>
+                                <segue destination="eUH-5Q-kiZ" kind="popoverPresentation" popoverAnchorBarButtonItem="78B-6n-j6y" id="LHU-LW-0dG">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="GWS-XW-AjC">
                             <connections>
                                 <segue destination="85F-xm-cjn" kind="presentation" id="jF3-Oe-g5t"/>
@@ -230,6 +237,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lEN-tk-6cv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1599" y="-928"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="0s1-dn-HBj">
+            <objects>
+                <viewController id="eUH-5Q-kiZ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Gkr-uz-OQF"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ya4-Vx-ruZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gEl-Al-95Z">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UqO-q4-uID" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="605" y="743"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HiS-CZ-MK1">
@@ -469,4 +495,7 @@
             <point key="canvasLocation" x="-693" y="-281"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="hamburger" width="20" height="20"/>
+    </resources>
 </document>

@@ -14,7 +14,6 @@
 		3E00E90019C4765400DF96BE /* LiveWebsocketDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E00E8FF19C4765400DF96BE /* LiveWebsocketDelegate.swift */; };
 		3E00E90219C4819B00DF96BE /* PassiveWebsocketDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E00E90119C4819B00DF96BE /* PassiveWebsocketDelegate.swift */; };
 		3E00E90419C496E200DF96BE /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E00E90319C496E200DF96BE /* Message.swift */; };
-		3EEB239319C52B31004CE4B3 /* json.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEB239219C52B31004CE4B3 /* json.swift */; };
 		B025B1D519C40B3E00BD13A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B025B1D419C40B3E00BD13A3 /* AppDelegate.swift */; };
 		B025B1D719C40B3E00BD13A3 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B025B1D619C40B3E00BD13A3 /* MasterViewController.swift */; };
 		B025B1D919C40B3E00BD13A3 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B025B1D819C40B3E00BD13A3 /* DetailViewController.swift */; };
@@ -333,7 +332,6 @@
 				B054579619C52B4B001BBD04 /* SignupVC.swift in Sources */,
 				3E00E90219C4819B00DF96BE /* PassiveWebsocketDelegate.swift in Sources */,
 				3E00E90419C496E200DF96BE /* Message.swift in Sources */,
-				3EEB239319C52B31004CE4B3 /* json.swift in Sources */,
 				B025B1FA19C40BAA00BD13A3 /* JDSideMenu.m in Sources */,
 				B054579419C52B4B001BBD04 /* HomeVC.swift in Sources */,
 				B025B1D519C40B3E00BD13A3 /* AppDelegate.swift in Sources */,
