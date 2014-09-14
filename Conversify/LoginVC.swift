@@ -44,7 +44,7 @@ class LoginVC: UIViewController,UITextFieldDelegate {
 
         
         if model.attemptLogin("", userPhone: "") {
-            println("attempted")
+            self.dismissViewControllerAnimated(true, completion: nil)
             
         } else {
             var alertView:UIAlertView = UIAlertView()
