@@ -36,20 +36,24 @@ class MasterViewController: UITableViewController {
         //self.navigationItem.rightBarButtonItem = addButton
         currentGroup = 0
         currentTab = 0
-        
+        /*
         self.refreshControl = UIRefreshControl()
         self.refreshControl?.attributedTitle = NSAttributedString(string: "Pull to refersh")
         self.refreshControl?.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
         self.tableView?.addSubview(refreshControl!)
-        
+        */
         self.tableView.estimatedRowHeight = 150
         self.tableView.rowHeight = UITableViewAutomaticDimension
 
     }
     
-    func refresh(sender:AnyObject)
+    @IBAction func refresh(sender:AnyObject)
     {
         // Code to refresh table view
+        if let refreshPull: UIRefreshControl = sender as? UIRefreshControl {
+            refreshPull.endRefreshing()
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {

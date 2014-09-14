@@ -12,6 +12,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
                             
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var optInSwitch: UISwitch!
+    var refreshControl : UIRefreshControl!
 
     @IBAction func unwindToList(segue: UIStoryboardSegue) {
         var source : NewMessageViewController = segue.sourceViewController as NewMessageViewController
@@ -56,6 +57,20 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.registerNib(nib, forCellReuseIdentifier: "threadCell")
         tableView.estimatedRowHeight = 68.0
         tableView.rowHeight = UITableViewAutomaticDimension
+        
+        refreshControl = UIRefreshControl()
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refersh")
+        refreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+        tableView.addSubview(refreshControl)
+        
+    }
+    
+    @IBAction func refresh(sender:AnyObject)
+    {
+        // Code to refresh table view
+        if let refreshPull: UIRefreshControl = sender as? UIRefreshControl {
+            refreshPull.endRefreshing()
+        }
         
     }
 

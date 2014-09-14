@@ -71,6 +71,21 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="o0F-gI-WZm">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.68573928809999996" green="0.88669281909999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <attributedString key="attributedTitle">
+                            <fragment content="Pull To Refresh">
+                                <attributes>
+                                    <font key="NSFont" metaFont="smallSystem"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <connections>
+                            <action selector="refresh:" destination="pGg-6v-bdr" eventType="valueChanged" id="QaB-cn-Q5w"/>
+                        </connections>
+                    </refreshControl>
                     <connections>
                         <outlet property="menuButton" destination="78B-6n-j6y" id="6lu-rz-YYq"/>
                         <outlet property="plusButton" destination="GWS-XW-AjC" id="AZW-fa-WIH"/>
