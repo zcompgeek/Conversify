@@ -13,9 +13,9 @@ import UIKit
 class Model: LiveWebsocketProtocol, PassiveWebsocketProtocol {
     
     var curUser = User()
-    var curGroups: [Group] = []
-    var curConverserations: [Conversation] = []
-    var curMessages: [Message] = []
+    var curGroups: [String:Group] = Dictionary<String,Group>()
+    var curConverserations: [String:Conversation] = Dictionary<String,Conversation>()
+    var curMessages: [String:Message] = Dictionary<String,Message>()
     var userAuthenticated = false
     var passiveWebsocket, liveWebsocket : Websocket
     
