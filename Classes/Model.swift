@@ -14,7 +14,7 @@ class Model: LiveWebsocketProtocol, PassiveWebsocketProtocol {
     
     var curUser = User()
     var curGroups: [String:Group?] = Dictionary<String,Group?>()
-    var curConversations: [String:Conversation?] = Dictionary<String,Conversation?>()
+    var curGroupToConversations: [String:Conversation?] = Dictionary<String,Conversation?>()
     var curMessages: [String:Message] = Dictionary<String,Message>()
     var userAuthenticated = false
     var messagesLoaded = false
@@ -142,13 +142,13 @@ class Model: LiveWebsocketProtocol, PassiveWebsocketProtocol {
             println(curGroups)
             waitingOnPull = 0
         } else if method == "getConversationsForGroup" {
-            curConversations = Dictionary<String,Conversation?>()
+            curGroupToConversations = Dictionary<String,Conversation?>()
             for i in 1..<obj["results"].length {
                 println(i)
                 println(obj["results"][i].asString!)
-                curConversations[(obj["results"][i].asString)!] = Conversation(conversation_id: (obj["results"][i][0].asInt)!, name: (obj["results"][i][1].asString)!)
+                curGroupToConversations[(obj["results"][i][6].asString)!] = Conversation(conversation_id: (obj["results"][i][0].asInt)!, name: (obj["results"][i][1].asString)!)
             }
-            println(curConversations)
+            println(curGroupToConversations)
             waitingOnPull = 0
         }
     }
