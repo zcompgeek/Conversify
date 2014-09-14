@@ -41,22 +41,20 @@ class Model: LiveWebsocketProtocol, PassiveWebsocketProtocol {
         liveWebsocket.connect()
         
         loadPersistentData()
-        userAuthenticated = attemptAuthenticateUser()
-        if !userAuthenticated {
-            // TODO show user registration modal
-        }
-        while !userAuthenticated {
-            userAuthenticated = attemptAuthenticateUser()
-        }
     }
     
     // +++++++++++ Initial Stuff +++++++++++
     
     func attemptAuthenticateUser() -> Bool {
+        println("authenticating")
         if curUser.userID == nil {
             return false
         }
-        // TODO Ask server to authenticate user based on curUser.userID, curUser.deviceID
+        var request = [
+            "methodName":"authenticateUser",
+            "arguments":[curUser.userID!, curUser.deviceID!]
+        ]
+        sendPassiveWebsocketMessage(request)
         return true
         
     }
@@ -109,15 +107,18 @@ class Model: LiveWebsocketProtocol, PassiveWebsocketProtocol {
     func onPassiveWebsocketReceiveMessage(text: String) {
         println("App received message '\(text)' in passive socket")
         var obj = JSON.parse(text)["object"]
-        var method = obj["method"].asString
-        if method == "updateUser" {
-            if ((obj["results"].asString == "failure") || obj["results"].isNull) {
-                println("Failed updating user. \(obj)")
-            }
+        if ((obj[1][0].asString == "failure") || obj[1][0].isNull) {
+            println("Failed query. \(obj)")
+            return
+        }
+        var method = obj["methodName"].asString
+        if method == "authenticateUser" {
+            userAuthenticated = obj[1][1].asString == "true" ? 1 : 0
         }
     }
     
     func sendPassiveWebsocketMessage(obj: AnyObject) {
+        println("\(JSON(obj).toString())")
         passiveWebsocket.writeString(JSON(obj).toString())
     }
     
@@ -148,7 +149,7 @@ class Model: LiveWebsocketProtocol, PassiveWebsocketProtocol {
         return result
     }
     
-    // ----------- User Settings (Modal) -----------
+    // ----------- User Settings -----------
     // Note that init places us in an infinite loop on the func that calls this submit until we successfully authenticate w/ db
     
     func submitRegistration(userID: String, userName: String, userEmail: String, userPhone: String) {
@@ -158,13 +159,29 @@ class Model: LiveWebsocketProtocol, PassiveWebsocketProtocol {
         curUser.userPhone = userPhone
         var curTime: NSDate = NSDate.date()
         var request = [
-            "method":"updateUser",
+            "methodName":"updateUser",
             "arguments": [
                 userID, userName, userEmail, userPhone,
                 curUser.deviceID!, curTime
             ]
         ]
         sendPassiveWebsocketMessage(request)
+    }
+    
+    // ----------- Login -----------
+    
+    func attemptLogin(userID: String, userPhone: String) -> Bool {
+        if userAuthenticated == 0 {
+            attemptAuthenticateUser()
+        } else {
+            return true
+        }
+        var counter = 0
+        while userAuthenticated != 1 && counter < 5 {
+            sleep(1)
+            counter++
+        }
+        return userAuthenticated
     }
     
     // ----------- CreateGroup (Modal) -----------
@@ -174,7 +191,6 @@ class Model: LiveWebsocketProtocol, PassiveWebsocketProtocol {
     // ----------- GroupSettings (Modal) -----------
     
     // ----------- Home -----------
-    // TODO on load, initialize liveMessageSocket
     
     // ----------- Messages -----------
     

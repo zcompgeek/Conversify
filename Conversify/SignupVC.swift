@@ -13,6 +13,7 @@ class SignupVC: UIViewController {
     @IBOutlet var txtUsername : UITextField!
     @IBOutlet var txtPassword : UITextField!
     @IBOutlet var txtConfirmPassword : UITextField!
+    let model : Model = (UIApplication.sharedApplication().delegate as AppDelegate).model!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,8 +46,9 @@ class SignupVC: UIViewController {
         var password:NSString = txtPassword.text as NSString
         var confirm_password:NSString = txtConfirmPassword.text as NSString
         
+
+        
         if ( username.isEqualToString("") || password.isEqualToString("") ) {
-            
             var alertView:UIAlertView = UIAlertView()
             alertView.title = "Sign Up Failed!"
             alertView.message = "Please enter Username and Password"

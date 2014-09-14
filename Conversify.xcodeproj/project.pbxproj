@@ -14,7 +14,7 @@
 		3E00E90019C4765400DF96BE /* LiveWebsocketDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E00E8FF19C4765400DF96BE /* LiveWebsocketDelegate.swift */; };
 		3E00E90219C4819B00DF96BE /* PassiveWebsocketDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E00E90119C4819B00DF96BE /* PassiveWebsocketDelegate.swift */; };
 		3E00E90419C496E200DF96BE /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E00E90319C496E200DF96BE /* Message.swift */; };
-		3EEB239319C52B31004CE4B3 /* json.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEB239219C52B31004CE4B3 /* json.swift */; };
+		3EEB239519C55688004CE4B3 /* json.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEB239419C55688004CE4B3 /* json.swift */; };
 		B025B1D519C40B3E00BD13A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B025B1D419C40B3E00BD13A3 /* AppDelegate.swift */; };
 		B025B1D719C40B3E00BD13A3 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B025B1D619C40B3E00BD13A3 /* MasterViewController.swift */; };
 		B025B1D919C40B3E00BD13A3 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B025B1D819C40B3E00BD13A3 /* DetailViewController.swift */; };
@@ -54,7 +54,7 @@
 		3E00E8FF19C4765400DF96BE /* LiveWebsocketDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveWebsocketDelegate.swift; sourceTree = "<group>"; };
 		3E00E90119C4819B00DF96BE /* PassiveWebsocketDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassiveWebsocketDelegate.swift; sourceTree = "<group>"; };
 		3E00E90319C496E200DF96BE /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
-		3EEB239219C52B31004CE4B3 /* json.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = json.swift; path = "../../../../../Downloads/swift-json-master/json.swift"; sourceTree = "<group>"; };
+		3EEB239419C55688004CE4B3 /* json.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = json.swift; sourceTree = "<group>"; };
 		B025B1CF19C40B3E00BD13A3 /* Conversify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Conversify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B025B1D319C40B3E00BD13A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B025B1D419C40B3E00BD13A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -128,7 +128,7 @@
 		3EEB239119C52B10004CE4B3 /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
-				3EEB239219C52B31004CE4B3 /* json.swift */,
+				3EEB239419C55688004CE4B3 /* json.swift */,
 				3E00E8F919C430BA00DF96BE /* Websocket.swift */,
 			);
 			name = Dependencies;
@@ -326,6 +326,7 @@
 				B025B20219C4224900BD13A3 /* SideMenuViewController.swift in Sources */,
 				B025B1D719C40B3E00BD13A3 /* MasterViewController.swift in Sources */,
 				3E00E8EB19C413B800DF96BE /* Model.swift in Sources */,
+				3EEB239519C55688004CE4B3 /* json.swift in Sources */,
 				B054578819C4CC47001BBD04 /* threadTableViewCell.swift in Sources */,
 				B054579019C519F7001BBD04 /* Conversation.swift in Sources */,
 				3E00E8F019C41A4300DF96BE /* User.swift in Sources */,
@@ -333,7 +334,6 @@
 				B054579619C52B4B001BBD04 /* SignupVC.swift in Sources */,
 				3E00E90219C4819B00DF96BE /* PassiveWebsocketDelegate.swift in Sources */,
 				3E00E90419C496E200DF96BE /* Message.swift in Sources */,
-				3EEB239319C52B31004CE4B3 /* json.swift in Sources */,
 				B025B1FA19C40BAA00BD13A3 /* JDSideMenu.m in Sources */,
 				B054579419C52B4B001BBD04 /* HomeVC.swift in Sources */,
 				B025B1D519C40B3E00BD13A3 /* AppDelegate.swift in Sources */,
